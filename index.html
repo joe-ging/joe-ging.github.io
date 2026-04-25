@@ -3,173 +3,176 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Margot Zhou | Principal Engineer Portfolio</title>
+    <title>Margot Zhou | Systems & ML Engineering Portfolio</title>
+    <!-- Premium Academic Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=IBM+Plex+Sans:wght@300;400;600&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #007AFF;
-            --accent: #64D2FF;
-            --bg: #0A0A0C;
-            --card-bg: rgba(255, 255, 255, 0.03);
-            --text-main: #FFFFFF;
-            --text-dim: #A1A1A6;
-            --glass: rgba(255, 255, 255, 0.05);
-            --border: rgba(255, 255, 255, 0.1);
+            --upenn-blue: #011F5B;
+            --upenn-red: #990000;
+            --text-main: #1C1C1E;
+            --text-light: #515154;
+            --bg: #FFFFFF;
+            --divider: #E5E5E7;
+            --mono: 'IBM Plex Mono', monospace;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { background-color: var(--bg); color: var(--text-main); font-family: 'Inter', sans-serif; line-height: 1.6; }
-        h1, h2, h3 { font-family: 'Outfit', sans-serif; font-weight: 700; }
-        .container { max-width: 1100px; margin: 0 auto; padding: 0 40px; }
-
-        /* Hero */
-        .hero { height: 100vh; display: flex; flex-direction: column; justify-content: center; position: relative; }
-        .hero h1 { font-size: 5rem; line-height: 1.1; margin-bottom: 20px; background: linear-gradient(135deg, #FFF 0%, #A1A1A6 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .hero .subtitle { font-size: 1.8rem; color: var(--accent); font-weight: 600; margin-bottom: 40px; }
-        .hero .meta { display: flex; gap: 20px; color: var(--text-dim); font-size: 1rem; }
-        .badge { background: var(--glass); border: 1px solid var(--border); padding: 4px 12px; border-radius: 20px; backdrop-filter: blur(10px); display: inline-block; margin-bottom: 20px; }
-
-        /* Sections */
-        section { padding: 100px 0; border-top: 1px solid var(--border); }
-        .section-header { margin-bottom: 60px; }
-        .section-header h2 { font-size: 3rem; margin-bottom: 10px; }
-        .section-header .line { width: 80px; height: 5px; background: var(--primary); border-radius: 2px; }
-
-        /* Professional Impact Grid */
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; }
-        .card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 32px; padding: 48px; transition: all 0.4s; position: relative; }
-        .card:hover { transform: translateY(-12px); border-color: var(--primary); background: rgba(0, 122, 255, 0.05); }
-
-        /* Detailed Project List */
-        .project-row { padding: 30px 0; border-bottom: 1px solid var(--border); transition: 0.3s; }
-        .project-row:hover { background: var(--glass); padding-left: 20px; }
-        .project-tag { font-size: 0.7rem; color: var(--primary); font-weight: 800; text-transform: uppercase; letter-spacing: 2px; border: 1px solid var(--primary); padding: 2px 8px; border-radius: 4px; display: inline-block; margin-bottom: 10px; }
-        .project-title { font-size: 1.5rem; color: #FFF; margin-bottom: 10px; }
-        .project-desc { color: var(--text-dim); font-size: 1.1rem; }
-
-        /* Stats */
-        .stat-highlight { font-size: 3rem; font-weight: 800; color: var(--accent); display: block; margin-bottom: 5px; }
-
-        footer { padding: 100px 0; text-align: center; color: var(--text-dim); }
+        body { background-color: var(--bg); color: var(--text-main); font-family: 'IBM Plex Sans', sans-serif; line-height: 1.7; -webkit-font-smoothing: antialiased; }
         
-        @media (max-width: 768px) { .hero h1 { font-size: 3.5rem; } .container { padding: 0 20px; } }
+        .container { max-width: 900px; margin: 0 auto; padding: 0 40px; }
+
+        /* Header / Hero */
+        header { padding: 120px 0 80px 0; border-bottom: 2px solid var(--text-main); }
+        h1 { font-family: 'Playfair Display', serif; font-size: 3.5rem; letter-spacing: -1px; margin-bottom: 10px; }
+        .tagline { font-size: 1.2rem; color: var(--text-light); text-transform: uppercase; letter-spacing: 3px; font-weight: 400; }
+
+        /* Navigation or Summary */
+        .summary { padding: 60px 0; font-size: 1.1rem; color: var(--text-light); }
+
+        /* Project Entry */
+        .project { padding: 80px 0; border-bottom: 1px solid var(--divider); }
+        .project-meta { font-family: var(--mono); font-size: 0.85rem; color: var(--upenn-blue); text-transform: uppercase; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center; }
+        .lang-tag { background: #f0f0f5; padding: 4px 10px; border-radius: 4px; border: 1px solid #d1d1d6; }
+        
+        h2 { font-family: 'Playfair Display', serif; font-size: 2.2rem; margin-bottom: 25px; }
+        .project-content { display: grid; grid-template-columns: 1fr; gap: 40px; }
+        .project-desc { font-size: 1.1rem; }
+        
+        .tech-spec { background: #F9F9FB; padding: 30px; border-left: 4px solid var(--upenn-blue); margin-top: 30px; }
+        .tech-spec h3 { font-family: var(--mono); font-size: 1rem; margin-bottom: 15px; color: var(--text-main); }
+        .tech-spec ul { list-style: none; }
+        .tech-spec li { margin-bottom: 10px; padding-left: 20px; position: relative; }
+        .tech-spec li::before { content: "→"; position: absolute; left: 0; color: var(--upenn-blue); }
+
+        /* Links */
+        .action-link { display: inline-block; margin-top: 30px; font-family: var(--mono); font-weight: 600; color: var(--upenn-blue); text-decoration: none; border-bottom: 1px solid var(--upenn-blue); transition: 0.2s; }
+        .action-link:hover { color: var(--upenn-red); border-color: var(--upenn-red); }
+
+        /* Footer */
+        footer { padding: 100px 0; text-align: center; border-top: 2px solid var(--text-main); margin-top: 100px; font-family: var(--mono); font-size: 0.9rem; }
+
+        /* Mobile Refinement */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            .container { padding: 0 20px; }
+        }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <!-- HERO -->
-        <header class="hero">
-            <div class="badge">Associate Principal Candidate | Engineering Leadership</div>
+        <!-- HEADER -->
+        <header>
             <h1>Margot Zhou</h1>
-            <p class="subtitle">UPenn MCIT • NetEase Vertical Lead • Venture Builder</p>
-            <div class="meta">
-                <span>$6M Impact</span>
-                <span>•</span>
-                <span>120+ Engineers Led</span>
-                <span>•</span>
-                <span>AI Transformation Architect</span>
-            </div>
+            <div class="tagline">Systems Engineering & Machine Learning Architect</div>
         </header>
 
-        <!-- MISSION -->
-        <section id="vision">
-            <div class="section-header">
-                <h2>Product-Led R&D</h2>
-                <div class="line"></div>
-            </div>
-            <div class="card">
-                <p style="font-size: 1.4rem; margin-bottom: 30px;">Driving industrial transformation through the intersection of <b>Architectural Rigor</b> and <b>Strategic Value</b>. At NetEase Youdao, I institutionalized engineering maturity to scale AI document intelligence into a $6M revenue vertical.</p>
-                <p style="font-size: 1.1rem; color: var(--text-dim);">My focus for ASTRI is on building modular, enterprise-ready engines that solve P&L-level problems for Smarter Cities and Frictionless FinTech.</p>
-            </div>
+        <!-- SUMMARY -->
+        <section class="summary">
+            <p>Candidate for Master of Computer and Information Technology at the <b>University of Pennsylvania</b>. Focusing on Distributed Systems, Memory-Efficient Algorithms, and scalable ML infrastructures. This portfolio serves as a technical index of code implementations across C++, Java, and Python.</p>
         </section>
 
-        <!-- PORTFOLIO DEEP-DIVE -->
-        <section id="portfolio">
-            <div class="section-header">
-                <h2>Technical Execution</h2>
-                <div class="line"></div>
+        <!-- PROJECT: BATTLESHIP OOP -->
+        <article class="project">
+            <div class="project-meta">
+                <span class="lang-tag">Java / System Design</span>
+                <span>CIT 5910 Core</span>
             </div>
-
-            <!-- FinTech AI -->
-            <div class="project-row">
-                <span class="project-tag">FINTECH / AI / LLM</span>
-                <h3 class="project-title">AI Stock Analyst (v2)</h3>
-                <p class="project-desc">Automated scanning and compliance auditing of SEC 10-K filings (NYSE: DAO) using <b>Gemini 3 Pro</b>. Orchestrated a RAG-based pipeline for real-time semantic extraction from unstructured financial data.</p>
-            </div>
-
-            <!-- Java OOP -->
-            <div class="project-row">
-                <span class="project-tag">JAVA / OOP / SYSTEM DESIGN</span>
-                <h3 class="project-title">Battleship Engine (CIT5910)</h3>
-                <p class="project-desc">A highly abstract implementation of the classic Battleship engine. Focused on <b>Polymorphism</b>, grid logic optimization, and strict Object-Oriented principles to manage complex state transitions.</p>
-            </div>
-
-            <!-- C++ Image Processing -->
-            <div class="project-row">
-                <span class="project-tag">C++ / PERFORMANCE / CV</span>
-                <h3 class="project-title">Photo Processing Core</h3>
-                <p class="project-desc">Academic-grade implementation of image transformations and filters in C++. Managed low-level memory headers and performance-critical loops to achieve efficient pixel-level processing.</p>
-            </div>
-
-            <!-- Distributed Systems -->
-            <div class="project-row">
-                <span class="project-tag">FASTAPI / REACT / DISTRIBUTED</span>
-                <h3 class="project-title">macbase-pro</h3>
-                <p class="project-desc">A full-stack distributed engine for real-time chess analysis. Integrates <b>Stockfish UCI</b>, asynchronous TWIC data imports, and a high-fidelity React 19 interface.</p>
-            </div>
-        </section>
-
-        <!-- EXECUTIVE TRACK RECORD -->
-        <section id="leadership">
-            <div class="section-header">
-                <h2>Executive Impact</h2>
-                <div class="line"></div>
-            </div>
-            <div class="grid">
-                <div class="card">
-                    <span class="stat-highlight">$6.0M</span>
-                    <h3>Annual Revenue</h3>
-                    <p>Owning the P&L and technical roadmap for a mission-critical AI vertical at NetEase Youdao.</p>
+            <h2>Battleship Engine: OOP Abstraction</h2>
+            <div class="project-content">
+                <div class="project-desc">
+                    A comprehensive implementation of a grid-based naval simulation engine. The project emphasizes strict adherence to Object-Oriented principles, specifically focusing on data encapsulation and inheritance hierarchies.
                 </div>
-                <div class="card">
-                    <span class="stat-highlight">120+</span>
-                    <h3>People Leadership</h3>
-                    <p>Directing cross-functional teams across China and HK to deliver award-winning innovations.</p>
+                <div class="tech-spec">
+                    <h3>Core Competencies Demonstrated:</h3>
+                    <ul>
+                        <li><b>Polymorphism & Inheritance</b>: Modular implementation of `Ship` subclasses (`Destroyer`, `Submarine`, etc.) with specialized behaviors.</li>
+                        <li><b>Grid Logic Optimization</b>: Efficient 10x10 matrix management in `Ocean.java` with hit/miss state propagation.</li>
+                        <li><b>Encapsulation</b>: Use of access modifiers and defensive copying to preserve engine integrity during high-frequency method calls.</li>
+                    </ul>
                 </div>
-                <div class="card">
-                    <span class="stat-highlight">A+</span>
-                    <h3>UPenn Rigor</h3>
-                    <p>Maintaining elite academic performance in Distributed Systems and Software Design.</p>
-                </div>
+                <a href="https://github.com/joe-ging/battleship" class="action-link">View Repository ↗</a>
             </div>
-        </section>
+        </article>
+
+        <!-- PROJECT: PHOTO PROCESSING -->
+        <article class="project">
+            <div class="project-meta">
+                <span class="lang-tag">C++ / Algorithms</span>
+                <span>High Performance Computing</span>
+            </div>
+            <h2>Image Processing Core</h2>
+            <div class="project-content">
+                <div class="project-desc">
+                    A performance-critical C++ implementation for pixel-level image transformation. Optimized for memory management and recursive filtering logic.
+                </div>
+                <div class="tech-spec">
+                    <h3>Technical Deep-Dive:</h3>
+                    <ul>
+                        <li><b>Manual Memory Management</b>: Implementation of efficient buffers to handle high-resolution image data without leaks.</li>
+                        <li><b>Algorithmic Transformations</b>: Use of recursive filters and convolution kernels for grayscale, blurring, and edge detection.</li>
+                        <li><b>OOP in C++</b>: Standardized `Image` and `Pixel` classes to facilitate complex filter chaining.</li>
+                    </ul>
+                </div>
+                <a href="https://github.com/joe-ging/photoscpp" class="action-link">Analysis of C++ Modules ↗</a>
+            </div>
+        </article>
+
+        <!-- PROJECT: AI STOCK ANALYST -->
+        <article class="project">
+            <div class="project-meta">
+                <span class="lang-tag">Python / Agentic AI</span>
+                <span>FinTech R&D</span>
+            </div>
+            <h2>AI Stock Analyst: Financial Semantic Engine</h2>
+            <div class="project-content">
+                <div class="project-desc">
+                    A semantic analysis engine designed to parse and audit complex SEC filings. Utilizing Gemini 3 Pro to synthesize qualitative insights from unstructured corporate data.
+                </div>
+                <div class="tech-spec">
+                    <h3>Implementation Strategy:</h3>
+                    <ul>
+                        <li><b>Agentic RAG Pipeline</b>: Orchestrated multi-step retrieval for precise data extraction from 10-K and 10-Q reports.</li>
+                        <li><b>Compliance Auditing</b>: Programmatic verification of corporate statements against regulatory benchmarks.</li>
+                        <li><b>Scalable Architecture</b>: Built with modular Python handlers for seamless integration into enterprise financial systems.</li>
+                    </ul>
+                </div>
+                <a href="https://github.com/joe-ging/AI_Stock_Analyst" class="action-link">Technical Deep-Dive ↗</a>
+            </div>
+        </article>
+
+        <!-- PROJECT: MACBASE -->
+        <article class="project">
+            <div class="project-meta">
+                <span class="lang-tag">FastAPI / React / UCI</span>
+                <span>Distributed Platforms</span>
+            </div>
+            <h2>macbase: Distributed Engine Hub</h2>
+            <div class="project-content">
+                <div class="project-desc">
+                    A distributed platform for real-time engine analysis and chess data processing. Bridging low-level UCI protocol interactions with modern web architectures.
+                </div>
+                <div class="tech-spec">
+                    <h3>Architectural Stack:</h3>
+                    <ul>
+                        <li><b>Backend Orchestration</b>: FastAPI-driven service layer managing asynchronous Stockfish engine requests.</li>
+                        <li><b>Data Persistence</b>: Implementation of efficient parsing for TWIC data and opening book repositories.</li>
+                        <li><b>Frontend Integrity</b>: High-fidelity React 19 implementation ensuring seamless state synchronization between board and engine.</li>
+                    </ul>
+                </div>
+                <a href="https://joe-ging.github.io/macbase/" class="action-link">Live Platform Demo ↗</a>
+            </div>
+        </article>
 
         <footer>
-            <p>Margot Zhou | <a href="mailto:jz540@seas.upenn.edu" style="color: var(--primary); text-decoration: none;">jz540@seas.upenn.edu</a></p>
-            <p style="margin-top: 20px; font-size: 0.8rem; opacity: 0.5;">Crafted for the ASTRI Associate Principal Interview, April 2026.</p>
+            <div class="container">
+                <p>Margot Zhou • <span style="font-family: var(--mono); ">jz540@seas.upenn.edu</span></p>
+                <p style="margin-top: 10px; opacity: 0.6;">University of Pennsylvania | MCIT Candidate 2026</p>
+            </div>
         </footer>
     </div>
-
-    <!-- Scroll Reveal -->
-    <script>
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if(entry.isIntersecting) {
-                    entry.target.style.opacity = 1;
-                    entry.target.style.transform = "translateY(0)";
-                }
-            });
-        }, { threshold: 0.1 });
-
-        document.querySelectorAll('section, .card').forEach(s => {
-            s.style.opacity = 0;
-            s.style.transform = "translateY(30px)";
-            s.style.transition = "all 0.8s ease-out";
-            observer.observe(s);
-        });
-    </script>
 </body>
 </html>
