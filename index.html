@@ -3,61 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Margot Zhou | Systems & ML Engineering Portfolio</title>
-    <!-- Premium Academic Fonts -->
+    <title>Margot Jing Zhou | Technical Portfolio for ASTRI Interview</title>
+    <!-- Elite Academic Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=IBM+Plex+Sans:wght@300;400;600&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;700&family=Source+Code+Pro:wght@400;600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --upenn-blue: #011F5B;
-            --upenn-red: #990000;
-            --text-main: #1C1C1E;
-            --text-light: #515154;
+            --astra-blue: #0A1F44;
+            --astra-gold: #C5A059;
             --bg: #FFFFFF;
-            --divider: #E5E5E7;
-            --mono: 'IBM Plex Mono', monospace;
+            --text: #1A1A1A;
+            --text-dim: #555555;
+            --border: #D1D1D6;
+            --mono: 'Source Code Pro', monospace;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { background-color: var(--bg); color: var(--text-main); font-family: 'IBM Plex Sans', sans-serif; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+        body { background-color: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; line-height: 1.8; -webkit-font-smoothing: antialiased; }
         
-        .container { max-width: 900px; margin: 0 auto; padding: 0 40px; }
+        .container { max-width: 960px; margin: 0 auto; padding: 0 40px; }
 
         /* Header / Hero */
-        header { padding: 120px 0 80px 0; border-bottom: 2px solid var(--text-main); }
-        h1 { font-family: 'Playfair Display', serif; font-size: 3.5rem; letter-spacing: -1px; margin-bottom: 10px; }
-        .tagline { font-size: 1.2rem; color: var(--text-light); text-transform: uppercase; letter-spacing: 3px; font-weight: 400; }
+        header { padding: 120px 0 60px 0; border-bottom: 3px solid var(--astra-blue); }
+        h1 { font-family: 'EB Garamond', serif; font-size: 4rem; letter-spacing: -1px; margin-bottom: 20px; color: var(--astra-blue); }
+        .candidate-title { font-size: 1.1rem; font-weight: 600; color: var(--astra-blue); text-transform: uppercase; letter-spacing: 2px; line-height: 1.4; }
+        .ref-id { font-family: var(--mono); font-size: 0.9rem; color: var(--astra-gold); margin-top: 10px; font-weight: 800; }
 
-        /* Navigation or Summary */
-        .summary { padding: 60px 0; font-size: 1.1rem; color: var(--text-light); }
+        /* Section Styling */
+        section { padding: 80px 0; }
+        h2 { font-family: 'EB Garamond', serif; font-size: 2.8rem; margin-bottom: 40px; border-bottom: 1px solid var(--border); padding-bottom: 10px; }
 
-        /* Project Entry */
-        .project { padding: 80px 0; border-bottom: 1px solid var(--divider); }
-        .project-meta { font-family: var(--mono); font-size: 0.85rem; color: var(--upenn-blue); text-transform: uppercase; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center; }
-        .lang-tag { background: #f0f0f5; padding: 4px 10px; border-radius: 4px; border: 1px solid #d1d1d6; }
+        /* Alignment Table */
+        .matrix-table { width: 100%; border-collapse: collapse; margin: 40px 0; font-size: 0.95rem; }
+        .matrix-table th { background: #f8f9fa; color: var(--astra-blue); font-family: var(--mono); text-transform: uppercase; font-size: 0.8rem; padding: 15px; text-align: left; border-bottom: 2px solid var(--astra-blue); }
+        .matrix-table td { padding: 20px 15px; border-bottom: 1px solid var(--border); vertical-align: top; }
+        .matrix-table td:first-child { width: 45%; font-weight: 600; color: var(--text-dim); }
+        .matrix-table td:last-child { font-family: var(--mono); color: var(--astra-blue); }
+        .status-tag { display: inline-block; padding: 2px 8px; border-radius: 4px; background: #EEE; font-size: 0.7rem; color: #999; margin-left: 10px; }
+
+        /* Project Cards */
+        .project-block { margin-bottom: 60px; }
+        .project-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 20px; }
+        .project-header h3 { font-family: 'EB Garamond', serif; font-size: 2.2rem; }
+        .project-lang { font-family: var(--mono); font-size: 0.8rem; color: var(--astra-gold); background: #FAF9F6; padding: 4px 12px; border: 1px solid var(--astra-gold); border-radius: 20px; }
         
-        h2 { font-family: 'Playfair Display', serif; font-size: 2.2rem; margin-bottom: 25px; }
-        .project-content { display: grid; grid-template-columns: 1fr; gap: 40px; }
-        .project-desc { font-size: 1.1rem; }
-        
-        .tech-spec { background: #F9F9FB; padding: 30px; border-left: 4px solid var(--upenn-blue); margin-top: 30px; }
-        .tech-spec h3 { font-family: var(--mono); font-size: 1rem; margin-bottom: 15px; color: var(--text-main); }
-        .tech-spec ul { list-style: none; }
-        .tech-spec li { margin-bottom: 10px; padding-left: 20px; position: relative; }
-        .tech-spec li::before { content: "→"; position: absolute; left: 0; color: var(--upenn-blue); }
+        .description { font-size: 1.1rem; margin-bottom: 20px; color: var(--text-dim); }
+        .tech-list { background: #FDFCF9; padding: 25px; border-left: 5px solid var(--astra-gold); }
+        .tech-list h4 { font-family: var(--mono); font-size: 0.9rem; margin-bottom: 15px; color: var(--astra-blue); text-transform: uppercase; }
+        .tech-list ul { list-style: none; }
+        .tech-list li { margin-bottom: 10px; }
+        .tech-list li strong { color: var(--astra-blue); }
 
-        /* Links */
-        .action-link { display: inline-block; margin-top: 30px; font-family: var(--mono); font-weight: 600; color: var(--upenn-blue); text-decoration: none; border-bottom: 1px solid var(--upenn-blue); transition: 0.2s; }
-        .action-link:hover { color: var(--upenn-red); border-color: var(--upenn-red); }
+        .btn-link { display: inline-block; margin-top: 25px; font-family: var(--mono); font-weight: 800; color: var(--astra-blue); text-decoration: none; border-bottom: 2px solid var(--astra-blue); padding-bottom: 2px; transition: 0.3s; }
+        .btn-link:hover { color: var(--astra-gold); border-color: var(--astra-gold); }
 
-        /* Footer */
-        footer { padding: 100px 0; text-align: center; border-top: 2px solid var(--text-main); margin-top: 100px; font-family: var(--mono); font-size: 0.9rem; }
+        footer { padding: 100px 0; border-top: 1px solid var(--border); text-align: center; color: var(--text-dim); font-size: 0.9rem; }
 
-        /* Mobile Refinement */
         @media (max-width: 768px) {
-            h1 { font-size: 2.5rem; }
-            .container { padding: 0 20px; }
+            h1 { font-size: 3rem; }
+            .project-header { flex-direction: column; gap: 10px; }
         }
     </style>
 </head>
@@ -66,111 +71,123 @@
     <div class="container">
         <!-- HEADER -->
         <header>
-            <h1>Margot Zhou</h1>
-            <div class="tagline">Systems Engineering & Machine Learning Architect</div>
+            <h1>Margot Jing Zhou</h1>
+            <div class="candidate-title">Associate Principal Engineer / Senior Lead Engineer / Lead Engineer, Machine Learning</div>
+            <div class="ref-id">Ref. ID: CTO/AITT/MSA/2246 | Technical Portfolio</div>
         </header>
 
-        <!-- SUMMARY -->
-        <section class="summary">
-            <p>Candidate for Master of Computer and Information Technology at the <b>University of Pennsylvania</b>. Focusing on Distributed Systems, Memory-Efficient Algorithms, and scalable ML infrastructures. This portfolio serves as a technical index of code implementations across C++, Java, and Python.</p>
+        <!-- ALIGNMENT MATRIX -->
+        <section id="matrix">
+            <h2>Role Alignment Matrix</h2>
+            <p style="color: var(--text-dim); margin-bottom: 20px;">Direct mapping of candidate technical experience to ASTRI Job Responsibilities (MSA/2246).</p>
+            <table class="matrix-table">
+                <thead>
+                    <tr>
+                        <th>Job Responsibility</th>
+                        <th>Evidence / Repository Implementation</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Initiate new ML projects & technical solutions proposal</td>
+                        <td><strong>AI Stock Analyst</strong>: Automated 10-K auditing discovery phase.</td>
+                    </tr>
+                    <tr>
+                        <td>Lead team: Design, Implement, Test, and Deploy</td>
+                        <td>Institutionalized CI/CD for high-load platforms. <span class="status-tag">Shared Engineering Maturity Profile</span></td>
+                    </tr>
+                    <tr>
+                        <td>Meet with customers & propose technical solutions</td>
+                        <td>Executive experience as Founding CEO (Ninja Ed stint).</td>
+                    </tr>
+                    <tr>
+                        <td>Mentor members on software & algorithm development</td>
+                        <td>Mentorship of 120-person cross-functional org.</td>
+                    </tr>
+                    <tr>
+                        <td>Develop models for smart city and fintech</td>
+                        <td><strong>AI Stock Analyst</strong>: Semantic Financial Engine implementation.</td>
+                    </tr>
+                    <tr>
+                        <td>Develop data analytics systems</td>
+                        <td><strong>macbase</strong>: Real-time on-chain/off-chain data ingestion.</td>
+                    </tr>
+                    <tr>
+                        <td>Develop deep learning / ML model training</td>
+                        <td><em>GitHub documentation updates pending...</em></td>
+                    </tr>
+                    <tr>
+                        <td>Data collection and cleaning</td>
+                        <td><em>GitHub documentation updates pending...</em></td>
+                    </tr>
+                    <tr>
+                        <td>Front-end and back-end development</td>
+                        <td><strong>macbase</strong>: Full-stack FastAPI + React 19 architecture.</td>
+                    </tr>
+                </tbody>
+            </table>
         </section>
 
-        <!-- PROJECT: BATTLESHIP OOP -->
-        <article class="project">
-            <div class="project-meta">
-                <span class="lang-tag">Java / System Design</span>
-                <span>CIT 5910 Core</span>
-            </div>
-            <h2>Battleship Engine: OOP Abstraction</h2>
-            <div class="project-content">
-                <div class="project-desc">
-                    A comprehensive implementation of a grid-based naval simulation engine. The project emphasizes strict adherence to Object-Oriented principles, specifically focusing on data encapsulation and inheritance hierarchies.
-                </div>
-                <div class="tech-spec">
-                    <h3>Core Competencies Demonstrated:</h3>
-                    <ul>
-                        <li><b>Polymorphism & Inheritance</b>: Modular implementation of `Ship` subclasses (`Destroyer`, `Submarine`, etc.) with specialized behaviors.</li>
-                        <li><b>Grid Logic Optimization</b>: Efficient 10x10 matrix management in `Ocean.java` with hit/miss state propagation.</li>
-                        <li><b>Encapsulation</b>: Use of access modifiers and defensive copying to preserve engine integrity during high-frequency method calls.</li>
-                    </ul>
-                </div>
-                <a href="https://github.com/joe-ging/battleship" class="action-link">View Repository ↗</a>
-            </div>
-        </article>
+        <!-- PROJECT CATALOG -->
+        <section id="catalog">
+            <h2>Technical Implementations</h2>
 
-        <!-- PROJECT: PHOTO PROCESSING -->
-        <article class="project">
-            <div class="project-meta">
-                <span class="lang-tag">C++ / Algorithms</span>
-                <span>High Performance Computing</span>
-            </div>
-            <h2>Image Processing Core</h2>
-            <div class="project-content">
-                <div class="project-desc">
-                    A performance-critical C++ implementation for pixel-level image transformation. Optimized for memory management and recursive filtering logic.
+            <!-- Project 1 -->
+            <div class="project-block">
+                <div class="project-header">
+                    <h3>Battleship: OOP & Logical Robustness</h3>
+                    <span class="project-lang">Java / CIT 5910 Core</span>
                 </div>
-                <div class="tech-spec">
-                    <h3>Technical Deep-Dive:</h3>
+                <p class="description">A rigorous implementation of an oceanic simulation engine, validating core competencies in software abstraction and system state management.</p>
+                <div class="tech-list">
+                    <h4>Core Implementations:</h4>
                     <ul>
-                        <li><b>Manual Memory Management</b>: Implementation of efficient buffers to handle high-resolution image data without leaks.</li>
-                        <li><b>Algorithmic Transformations</b>: Use of recursive filters and convolution kernels for grayscale, blurring, and edge detection.</li>
-                        <li><b>OOP in C++</b>: Standardized `Image` and `Pixel` classes to facilitate complex filter chaining.</li>
+                        <li><strong>Polymorphism</strong>: Strategic use of subclass inheritance to manage specialized ship behaviors.</li>
+                        <li><strong>Scalable Grid Logic</strong>: Optimized 10x10 matrix interaction and hit-detection propagation.</li>
                     </ul>
                 </div>
-                <a href="https://github.com/joe-ging/photoscpp" class="action-link">Analysis of C++ Modules ↗</a>
+                <a href="https://github.com/joe-ging/battleship" class="btn-link">View Documentation ↗</a>
             </div>
-        </article>
 
-        <!-- PROJECT: AI STOCK ANALYST -->
-        <article class="project">
-            <div class="project-meta">
-                <span class="lang-tag">Python / Agentic AI</span>
-                <span>FinTech R&D</span>
-            </div>
-            <h2>AI Stock Analyst: Financial Semantic Engine</h2>
-            <div class="project-content">
-                <div class="project-desc">
-                    A semantic analysis engine designed to parse and audit complex SEC filings. Utilizing Gemini 3 Pro to synthesize qualitative insights from unstructured corporate data.
+            <!-- Project 2 -->
+            <div class="project-block">
+                <div class="project-header">
+                    <h3>Photo-CPP: High Performance CV</h3>
+                    <span class="project-lang">C++ / Image Processing</span>
                 </div>
-                <div class="tech-spec">
-                    <h3>Implementation Strategy:</h3>
+                <p class="description">Performance-critical pixel-level processing engine. Focused on memory efficiency and low-level algorithmic execution.</p>
+                <div class="tech-list">
+                    <h4>Core Implementations:</h4>
                     <ul>
-                        <li><b>Agentic RAG Pipeline</b>: Orchestrated multi-step retrieval for precise data extraction from 10-K and 10-Q reports.</li>
-                        <li><b>Compliance Auditing</b>: Programmatic verification of corporate statements against regulatory benchmarks.</li>
-                        <li><b>Scalable Architecture</b>: Built with modular Python handlers for seamless integration into enterprise financial systems.</li>
+                        <li><strong>Memory Management</strong>: Manual buffer allocation/deallocation optimized for high-res image data.</li>
+                        <li><strong>Recursive Filters</strong>: Implementation of complex convolution kernels and blurring algorithms.</li>
                     </ul>
                 </div>
-                <a href="https://github.com/joe-ging/AI_Stock_Analyst" class="action-link">Technical Deep-Dive ↗</a>
+                <a href="https://github.com/joe-ging/photoscpp" class="btn-link">View Documentation ↗</a>
             </div>
-        </article>
 
-        <!-- PROJECT: MACBASE -->
-        <article class="project">
-            <div class="project-meta">
-                <span class="lang-tag">FastAPI / React / UCI</span>
-                <span>Distributed Platforms</span>
-            </div>
-            <h2>macbase: Distributed Engine Hub</h2>
-            <div class="project-content">
-                <div class="project-desc">
-                    A distributed platform for real-time engine analysis and chess data processing. Bridging low-level UCI protocol interactions with modern web architectures.
+            <!-- Project 3 -->
+            <div class="project-block">
+                <div class="project-header">
+                    <h3>AI Stock Analyst: LLM-RAG FinTech</h3>
+                    <span class="project-lang">Python / Gemini 3 Pro</span>
                 </div>
-                <div class="tech-spec">
-                    <h3>Architectural Stack:</h3>
+                <p class="description">Semantic FinTech engine for auditing corporate filings. Orchestrates complex RAG pipelines to ensure regulatory compliance.</p>
+                <div class="tech-list">
+                    <h4>Core Implementations:</h4>
                     <ul>
-                        <li><b>Backend Orchestration</b>: FastAPI-driven service layer managing asynchronous Stockfish engine requests.</li>
-                        <li><b>Data Persistence</b>: Implementation of efficient parsing for TWIC data and opening book repositories.</li>
-                        <li><b>Frontend Integrity</b>: High-fidelity React 19 implementation ensuring seamless state synchronization between board and engine.</li>
+                        <li><strong>Agentic Orchestration</strong>: Multi-step retrieval logic for precise data extraction from unstructured PDFs.</li>
+                        <li><strong>compliance-as-code</strong>: Programmatic verification of financial statements against legal benchmarks.</li>
                     </ul>
                 </div>
-                <a href="https://joe-ging.github.io/macbase/" class="action-link">Live Platform Demo ↗</a>
+                <a href="https://github.com/joe-ging/AI_Stock_Analyst" class="btn-link">View Documentation ↗</a>
             </div>
-        </article>
+        </section>
 
         <footer>
             <div class="container">
-                <p>Margot Zhou • <span style="font-family: var(--mono); ">jz540@seas.upenn.edu</span></p>
-                <p style="margin-top: 10px; opacity: 0.6;">University of Pennsylvania | MCIT Candidate 2026</p>
+                <p><strong>Margot Jing Zhou</strong></p>
+                <p style="font-family: var(--mono); letter-spacing: 0;">jz540@seas.upenn.edu | UPenn MCIT Candidate 2026</p>
             </div>
         </footer>
     </div>
