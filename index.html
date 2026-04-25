@@ -7,7 +7,7 @@
     <!-- Elite Academic Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;700&family=Source+Code+Pro:wght@400;600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;700&family=Source+Code+Pro:wght@400;600&family=IBM+Plex+Sans:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         :root {
             --astra-blue: #0A1F44;
@@ -20,7 +20,7 @@
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { background-color: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; line-height: 1.8; -webkit-font-smoothing: antialiased; }
+        body { background-color: var(--bg); color: var(--text); font-family: 'IBM Plex Sans', sans-serif; line-height: 1.8; -webkit-font-smoothing: antialiased; }
         
         .container { max-width: 960px; margin: 0 auto; padding: 0 40px; }
 
@@ -42,27 +42,27 @@
         .matrix-table td:last-child { font-family: var(--mono); color: var(--astra-blue); }
         .status-tag { display: inline-block; padding: 2px 8px; border-radius: 4px; background: #EEE; font-size: 0.7rem; color: #999; margin-left: 10px; }
 
-        /* Project Cards */
-        .project-block { margin-bottom: 60px; }
-        .project-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 20px; }
-        .project-header h3 { font-family: 'EB Garamond', serif; font-size: 2.2rem; }
-        .project-lang { font-family: var(--mono); font-size: 0.8rem; color: var(--astra-gold); background: #FAF9F6; padding: 4px 12px; border: 1px solid var(--astra-gold); border-radius: 20px; }
-        
-        .description { font-size: 1.1rem; margin-bottom: 20px; color: var(--text-dim); }
-        .tech-list { background: #FDFCF9; padding: 25px; border-left: 5px solid var(--astra-gold); }
-        .tech-list h4 { font-family: var(--mono); font-size: 0.9rem; margin-bottom: 15px; color: var(--astra-blue); text-transform: uppercase; }
-        .tech-list ul { list-style: none; }
-        .tech-list li { margin-bottom: 10px; }
-        .tech-list li strong { color: var(--astra-blue); }
+        /* Course / Project Entry */
+        .course-entry { margin-bottom: 60px; }
+        .course-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 15px; }
+        .course-header h3 { font-family: 'EB Garamond', serif; font-size: 2.2rem; color: var(--astra-blue); }
+        .course-code { font-family: var(--mono); font-size: 0.85rem; color: var(--astra-gold); font-weight: 600; }
 
-        .btn-link { display: inline-block; margin-top: 25px; font-family: var(--mono); font-weight: 800; color: var(--astra-blue); text-decoration: none; border-bottom: 2px solid var(--astra-blue); padding-bottom: 2px; transition: 0.3s; }
-        .btn-link:hover { color: var(--astra-gold); border-color: var(--astra-gold); }
+        .course-desc { font-size: 1.1rem; color: var(--text-dim); margin-bottom: 25px; }
+        .tech-deep-dive { background: #f9f9f7; padding: 30px; border-left: 4px solid var(--astra-gold); }
+        .tech-deep-dive h4 { font-family: var(--mono); font-size: 0.85rem; margin-bottom: 15px; color: var(--astra-blue); text-transform: uppercase; letter-spacing: 1px; }
+        .tech-deep-dive ul { list-style: none; }
+        .tech-deep-dive li { margin-bottom: 12px; position: relative; padding-left: 20px; }
+        .tech-deep-dive li::before { content: "→"; position: absolute; left: 0; color: var(--astra-gold); }
+
+        .repo-link { display: inline-block; margin-top: 25px; font-family: var(--mono); font-size: 0.9rem; font-weight: 700; color: var(--astra-blue); text-decoration: none; border-bottom: 2px solid var(--astra-blue); transition: 0.2s; }
+        .repo-link:hover { color: var(--astra-gold); border-color: var(--astra-gold); }
 
         footer { padding: 100px 0; border-top: 1px solid var(--border); text-align: center; color: var(--text-dim); font-size: 0.9rem; }
 
         @media (max-width: 768px) {
             h1 { font-size: 3rem; }
-            .project-header { flex-direction: column; gap: 10px; }
+            .course-header { flex-direction: column; gap: 5px; }
         }
     </style>
 </head>
@@ -79,116 +79,115 @@
         <!-- ALIGNMENT MATRIX -->
         <section id="matrix">
             <h2>Role Alignment Matrix</h2>
-            <p style="color: var(--text-dim); margin-bottom: 20px;">Direct mapping of candidate technical experience to ASTRI Job Responsibilities (MSA/2246).</p>
             <table class="matrix-table">
                 <thead>
                     <tr>
-                        <th>Job Responsibility</th>
-                        <th>Evidence / Repository Implementation</th>
+                        <th>Requirement</th>
+                        <th>Evidence / Project Implementation</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Initiate new ML projects & technical solutions proposal</td>
-                        <td><strong>AI Stock Analyst</strong>: Automated 10-K auditing discovery phase.</td>
-                    </tr>
-                    <tr>
-                        <td>Lead team: Design, Implement, Test, and Deploy</td>
-                        <td>Institutionalized CI/CD for high-load platforms. <span class="status-tag">Shared Engineering Maturity Profile</span></td>
-                    </tr>
-                    <tr>
-                        <td>Meet with customers & propose technical solutions</td>
-                        <td>Executive experience as Founding CEO (Ninja Ed stint).</td>
-                    </tr>
-                    <tr>
-                        <td>Mentor members on software & algorithm development</td>
-                        <td>Mentorship of 120-person cross-functional org.</td>
+                        <td>Lead team to design, implement, and deploy</td>
+                        <td><strong>NetEase Engineering Maturity</strong>: Scaled distributed architectures to $6M revenue.</td>
                     </tr>
                     <tr>
                         <td>Develop models for smart city and fintech</td>
-                        <td><strong>AI Stock Analyst</strong>: Semantic Financial Engine implementation.</td>
+                        <td><strong>AI Stock Analyst</strong>: Semantic Financial Engine implementation (RAG/Gemini).</td>
                     </tr>
                     <tr>
                         <td>Develop data analytics systems</td>
-                        <td><strong>macbase</strong>: Real-time on-chain/off-chain data ingestion.</td>
-                    </tr>
-                    <tr>
-                        <td>Develop deep learning / ML model training</td>
-                        <td><em>GitHub documentation updates pending...</em></td>
-                    </tr>
-                    <tr>
-                        <td>Data collection and cleaning</td>
-                        <td><em>GitHub documentation updates pending...</em></td>
+                        <td><strong>macbase</strong>: Data ingestion pipeline for Stockfish & opening books.</td>
                     </tr>
                     <tr>
                         <td>Front-end and back-end development</td>
                         <td><strong>macbase</strong>: Full-stack FastAPI + React 19 architecture.</td>
                     </tr>
+                    <tr>
+                        <td>Develop deep learning / ML training</td>
+                        <td><strong>CIT 5940/5830</strong>: Academic modeling implementations.</td>
+                    </tr>
                 </tbody>
             </table>
         </section>
 
-        <!-- PROJECT CATALOG -->
-        <section id="catalog">
-            <h2>Technical Implementations</h2>
+        <!-- ACADEMIC DOSSIER -->
+        <section id="academic">
+            <h2>Technical Implementations (MCIT)</h2>
 
-            <!-- Project 1 -->
-            <div class="project-block">
-                <div class="project-header">
-                    <h3>Battleship: OOP & Logical Robustness</h3>
-                    <span class="project-lang">Java / CIT 5910 Core</span>
+            <!-- CIT 5910 -->
+            <article class="course-entry">
+                <div class="course-header">
+                    <h3>Battleship Engine & Software Design</h3>
+                    <span class="course-code">CIT 5910 Core</span>
                 </div>
-                <p class="description">A rigorous implementation of an oceanic simulation engine, validating core competencies in software abstraction and system state management.</p>
-                <div class="tech-list">
-                    <h4>Core Implementations:</h4>
+                <div class="course-desc">A rigorous Java implementation of a grid-based naval engine, emphasizing strict Object-Oriented principles and logical robustness.</div>
+                <div class="tech-deep-dive">
+                    <h4>Engineering Highlights:</h4>
                     <ul>
-                        <li><strong>Polymorphism</strong>: Strategic use of subclass inheritance to manage specialized ship behaviors.</li>
-                        <li><strong>Scalable Grid Logic</strong>: Optimized 10x10 matrix interaction and hit-detection propagation.</li>
+                        <li><strong>Ocean.java</strong>: Implementation of 10x10 matrix interaction logic with encapsulated state handlers.</li>
+                        <li><strong>Polymorphism</strong>: Hierarchical implementation of `Ship` subclasses (`Battleship`, `Cruiser`, etc.) with specialized behaviors.</li>
+                        <li><strong>Memory Protection</strong>: Defensive copying and access modifier strictness to preserve engine integrity.</li>
                     </ul>
                 </div>
-                <a href="https://github.com/joe-ging/battleship" class="btn-link">View Documentation ↗</a>
-            </div>
+                <a href="https://github.com/joe-ging/battleship" class="repo-link">Inspect Code (Private Repo) ↗</a>
+            </article>
 
-            <!-- Project 2 -->
-            <div class="project-block">
-                <div class="project-header">
-                    <h3>Photo-CPP: High Performance CV</h3>
-                    <span class="project-lang">C++ / Image Processing</span>
+            <!-- CIT 5940 -->
+            <article class="course-entry">
+                <div class="course-header">
+                    <h3>Data Structures & Design Patterns</h3>
+                    <span class="course-code">CIT 5940 Core</span>
                 </div>
-                <p class="description">Performance-critical pixel-level processing engine. Focused on memory efficiency and low-level algorithmic execution.</p>
-                <div class="tech-list">
-                    <h4>Core Implementations:</h4>
+                <div class="course-desc">Advanced software design focusing on data structure optimization and the application of architectural patterns to complex systems.</div>
+                <div class="tech-deep-dive">
+                    <h4>Engineering Highlights:</h4>
                     <ul>
-                        <li><strong>Memory Management</strong>: Manual buffer allocation/deallocation optimized for high-res image data.</li>
-                        <li><strong>Recursive Filters</strong>: Implementation of complex convolution kernels and blurring algorithms.</li>
+                        <li><strong>Group Project</strong>: Collaboration on high-load Java architectures using Factory, Strategy, and Observer patterns.</li>
+                        <li><strong>Algorithm Complexity</strong>: Implementation of optimized search and sorting routines for large-scale data sets.</li>
                     </ul>
                 </div>
-                <a href="https://github.com/joe-ging/photoscpp" class="btn-link">View Documentation ↗</a>
-            </div>
+                <a href="https://github.com/joe-ging/cit594-group-project" class="repo-link">Inspect Code (Private Repo) ↗</a>
+            </article>
 
-            <!-- Project 3 -->
-            <div class="project-block">
-                <div class="project-header">
-                    <h3>AI Stock Analyst: LLM-RAG FinTech</h3>
-                    <span class="project-lang">Python / Gemini 3 Pro</span>
+            <!-- EAS 5830 -->
+            <article class="course-entry">
+                <div class="course-header">
+                    <h3>Data Science & Statistical Modeling</h3>
+                    <span class="course-code">EAS 5830 / Modules 1-6</span>
                 </div>
-                <p class="description">Semantic FinTech engine for auditing corporate filings. Orchestrates complex RAG pipelines to ensure regulatory compliance.</p>
-                <div class="tech-list">
-                    <h4>Core Implementations:</h4>
+                <div class="course-desc">A series of intensive modules focusing on Python-driven data analysis, statistical inference, and machine learning foundation.</div>
+                <div class="tech-deep-dive">
+                    <h4>Engineering Highlights:</h4>
                     <ul>
-                        <li><strong>Agentic Orchestration</strong>: Multi-step retrieval logic for precise data extraction from unstructured PDFs.</li>
-                        <li><strong>compliance-as-code</strong>: Programmatic verification of financial statements against legal benchmarks.</li>
+                        <li><strong>Predictive Analysis</strong>: Implementation of regression and classification models using standardized Python data stacks.</li>
+                        <li><strong>Data Pipelines</strong>: End-to-end collection, cleaning, and sanitization of unstructured data sets.</li>
                     </ul>
                 </div>
-                <a href="https://github.com/joe-ging/AI_Stock_Analyst" class="btn-link">View Documentation ↗</a>
-            </div>
+                <a href="https://github.com/joe-ging/EAS5830M6" class="repo-link">Inspect Code (Private Repo) ↗</a>
+            </article>
+
+            <!-- AI Stock Analyst -->
+            <article class="course-entry" style="border: 2px solid var(--astra-gold); border-radius: 10px; padding: 30px;">
+                <div class="course-header">
+                    <h3>AI Stock Analyst: FinTech R&D</h3>
+                    <span class="course-code">Advanced Research</span>
+                </div>
+                <div class="course-desc">A semantic audit engine designed to parse and synthesize SEC 10-K filings using **Gemini 3 Pro**.</div>
+                <div class="tech-deep-dive">
+                    <h4>Engineering Highlights:</h4>
+                    <ul>
+                        <li><strong>Agentic RAG</strong>: High-precision retrieval for corporate semantic extraction (NYSE: DAO filings).</li>
+                        <li><strong>ML Observability</strong>: Pipeline instrumentation to track semantic drift and audit accuracy.</li>
+                    </ul>
+                </div>
+                <a href="https://github.com/joe-ging/AI_Stock_Analyst" class="repo-link">Explore Agent Architecture ↗</a>
+            </article>
         </section>
 
         <footer>
-            <div class="container">
-                <p><strong>Margot Jing Zhou</strong></p>
-                <p style="font-family: var(--mono); letter-spacing: 0;">jz540@seas.upenn.edu | UPenn MCIT Candidate 2026</p>
-            </div>
+            <p><strong>Margot Jing Zhou</strong> • jz540@seas.upenn.edu</p>
+            <p style="margin-top: 10px; opacity: 0.6;">University of Pennsylvania | MCIT Candidate 2026</p>
         </footer>
     </div>
 </body>
