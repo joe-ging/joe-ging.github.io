@@ -3,191 +3,263 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Margot Jing Zhou | Technical Portfolio for ASTRI Interview</title>
+    <title>Margot Jing Zhou | ASTRI Associate Principal Technical Dossier</title>
     <!-- Elite Academic Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;700&family=Source+Code+Pro:wght@400;600&family=IBM+Plex+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;700&family=Source+Code+Pro:wght@400;600&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --astra-blue: #0A1F44;
-            --astra-gold: #C5A059;
-            --bg: #FFFFFF;
-            --text: #1A1A1A;
-            --text-dim: #555555;
-            --border: #D1D1D6;
-            --mono: 'Source Code Pro', monospace;
+            --astri-blue: #0A1F44;
+            --astri-red: #D22B2B;
+            --academic-gold: #B5965A;
+            --bg-light: #FAFAFA;
+            --glass-bg: rgba(255, 255, 255, 0.9);
+            --border: #E2E8F0;
+            --text-main: #1E293B;
+            --text-dim: #64748B;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { background-color: var(--bg); color: var(--text); font-family: 'IBM Plex Sans', sans-serif; line-height: 1.8; -webkit-font-smoothing: antialiased; }
+        body { 
+            background-color: var(--bg-light); 
+            color: var(--text-main); 
+            font-family: 'Inter', sans-serif; 
+            line-height: 1.7; 
+            scroll-behavior: smooth;
+        }
         
-        .container { max-width: 960px; margin: 0 auto; padding: 0 40px; }
+        .container { max-width: 1080px; margin: 0 auto; padding: 0 40px; }
+
+        /* Floating Nav */
+        nav {
+            position: fixed; top: 20px; left: 50%; transform: translateX(-50%);
+            background: var(--glass-bg); backdrop-filter: blur(10px);
+            padding: 12px 30px; border-radius: 40px; border: 1px solid var(--border);
+            z-index: 1000; box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            display: flex; gap: 20px; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;
+        }
+        nav a { text-decoration: none; color: var(--astri-blue); transition: 0.2s; }
+        nav a:hover { color: var(--astri-red); }
 
         /* Header / Hero */
-        header { padding: 120px 0 60px 0; border-bottom: 3px solid var(--astra-blue); }
-        h1 { font-family: 'EB Garamond', serif; font-size: 4rem; letter-spacing: -1px; margin-bottom: 20px; color: var(--astra-blue); }
-        .candidate-title { font-size: 1.1rem; font-weight: 600; color: var(--astra-blue); text-transform: uppercase; letter-spacing: 2px; line-height: 1.4; }
-        .ref-id { font-family: var(--mono); font-size: 0.9rem; color: var(--astra-gold); margin-top: 10px; font-weight: 800; }
+        header { 
+            padding: 180px 0 100px 0; 
+            text-align: center;
+            background: radial-gradient(circle at top right, #F1F5F9 0%, transparent 70%);
+        }
+        h1 { 
+            font-family: 'EB Garamond', serif; font-size: 5rem; letter-spacing: -2px; 
+            margin-bottom: 20px; color: var(--astri-blue); line-height: 0.9;
+        }
+        .hero-title { 
+            font-size: 1.1rem; font-weight: 800; color: var(--astri-red); 
+            text-transform: uppercase; letter-spacing: 3px; margin-bottom: 30px; 
+        }
+        .contact-info { font-family: 'Source Code Pro', monospace; font-size: 0.8rem; color: var(--text-dim); margin-top: 20px; }
 
-        /* Section Styling */
-        section { padding: 80px 0; }
-        h2 { font-family: 'EB Garamond', serif; font-size: 2.8rem; margin-bottom: 40px; border-bottom: 1px solid var(--border); padding-bottom: 10px; }
+        /* Section Headings */
+        section { padding: 100px 0; border-top: 1px solid var(--border); }
+        h2 { 
+            font-family: 'EB Garamond', serif; font-size: 2.8rem; margin-bottom: 50px; 
+            color: var(--astri-blue); display: flex; align-items: center; gap: 20px;
+        }
+        h2::after { content: ""; flex: 1; height: 1px; background: var(--border); }
 
-        /* Alignment Table */
-        .matrix-table { width: 100%; border-collapse: collapse; margin: 40px 0; font-size: 0.95rem; }
-        .matrix-table th { background: #f8f9fa; color: var(--astra-blue); font-family: var(--mono); text-transform: uppercase; font-size: 0.8rem; padding: 15px; text-align: left; border-bottom: 2px solid var(--astra-blue); }
-        .matrix-table td { padding: 20px 15px; border-bottom: 1px solid var(--border); vertical-align: top; }
-        .matrix-table td:first-child { width: 45%; font-weight: 600; color: var(--text-dim); }
-        .matrix-table td:last-child { font-family: var(--mono); color: var(--astra-blue); }
-        .status-tag { display: inline-block; padding: 2px 8px; border-radius: 4px; background: #EEE; font-size: 0.7rem; color: #999; margin-left: 10px; }
+        /* Resume Grid Layout */
+        .resume-entry { margin-bottom: 40px; border-left: 3px solid var(--academic-gold); padding-left: 30px; }
+        .resume-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px; }
+        .resume-header h3 { font-family: 'EB Garamond', serif; font-size: 1.8rem; color: var(--astri-blue); }
+        .resume-date { font-family: 'Source Code Pro', monospace; font-size: 0.75rem; color: var(--academic-gold); font-weight: 700; }
+        .resume-org { font-weight: 700; color: var(--text-main); font-size: 1.05rem; margin-bottom: 10px; display: block; }
+        .resume-bullets { list-style: none; }
+        .resume-bullets li { font-size: 0.95rem; margin-bottom: 12px; position: relative; padding-left: 20px; color: var(--text-dim); }
+        .resume-bullets li::before { content: "•"; position: absolute; left: 0; color: var(--academic-gold); font-weight: bold; }
 
-        /* Course / Project Entry */
-        .course-entry { margin-bottom: 60px; }
-        .course-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 15px; }
-        .course-header h3 { font-family: 'EB Garamond', serif; font-size: 2.2rem; color: var(--astra-blue); }
-        .course-code { font-family: var(--mono); font-size: 0.85rem; color: var(--astra-gold); font-weight: 600; }
+        /* Project Cards */
+        .project-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+        .p-card {
+            background: #FFF; border-radius: 20px; border: 1px solid var(--border);
+            padding: 40px; transition: 0.3s; position: relative; overflow: hidden;
+            display: flex; flex-direction: column;
+        }
+        .p-card:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.05); }
+        .p-card::before { content: ""; position: absolute; top: 0; left: 0; width: 6px; height: 100%; background: var(--astri-blue); }
+        .p-card.nlp::before { background: var(--astri-red); }
+        .p-card.fintech::before { background: var(--academic-gold); }
 
-        .course-desc { font-size: 1.1rem; color: var(--text-dim); margin-bottom: 25px; }
-        .tech-deep-dive { background: #f9f9f7; padding: 30px; border-left: 4px solid var(--astra-gold); }
-        .tech-deep-dive h4 { font-family: var(--mono); font-size: 0.85rem; margin-bottom: 15px; color: var(--astra-blue); text-transform: uppercase; letter-spacing: 1px; }
-        .tech-deep-dive ul { list-style: none; }
-        .tech-deep-dive li { margin-bottom: 12px; position: relative; padding-left: 20px; }
-        .tech-deep-dive li::before { content: "→"; position: absolute; left: 0; color: var(--astra-gold); }
+        .p-tag { font-family: 'Source Code Pro', monospace; font-size: 0.7rem; font-weight: 800; color: var(--text-dim); margin-bottom: 15px; display: block; border-left: 2px solid var(--astri-red); padding-left: 10px; text-transform: uppercase; }
+        .p-card h3 { font-family: 'EB Garamond', serif; font-size: 2rem; margin-bottom: 15px; color: var(--astri-blue); }
+        .p-card p { color: var(--text-dim); font-size: 0.95rem; margin-bottom: 25px; flex-grow: 1; }
+        
+        .p-links { display: flex; gap: 15px; margin-top: auto; }
+        .btn { text-decoration: none; padding: 10px 18px; border-radius: 6px; font-weight: 700; font-size: 0.8rem; transition: 0.2s; display: inline-flex; align-items: center; gap: 8px; }
+        .btn-primary { background: var(--astri-blue); color: #FFF; }
+        .btn-primary:hover { background: var(--astri-red); }
+        .btn-outline { border: 1px solid var(--astri-blue); color: var(--astri-blue); }
+        .btn-outline:hover { background: var(--astri-blue); color: #FFF; }
 
-        .repo-link { display: inline-block; margin-top: 25px; font-family: var(--mono); font-size: 0.9rem; font-weight: 700; color: var(--astra-blue); text-decoration: none; border-bottom: 2px solid var(--astra-blue); transition: 0.2s; }
-        .repo-link:hover { color: var(--astra-gold); border-color: var(--astra-gold); }
+        footer { padding: 80px 0; text-align: center; color: var(--text-dim); font-size: 0.85rem; background: #FFF; border-top: 1px solid var(--border); }
 
-        footer { padding: 100px 0; border-top: 1px solid var(--border); text-align: center; color: var(--text-dim); font-size: 0.9rem; }
-
-        @media (max-width: 768px) {
-            h1 { font-size: 3rem; }
-            .course-header { flex-direction: column; gap: 5px; }
+        @media (max-width: 900px) {
+            .project-grid { grid-template-columns: 1fr; }
+            h1 { font-size: 3.5rem; }
+            .resume-header { flex-direction: column; gap: 5px; }
         }
     </style>
 </head>
 <body>
 
+    <nav>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <a href="#projects">Tech Projects</a>
+    </nav>
+
     <div class="container">
-        <!-- HEADER -->
+        <!-- HERO -->
         <header>
+            <div class="hero-title">MLOps Field Engineer | Solutions Architect — Open Source Infrastructure Lead</div>
             <h1>Margot Jing Zhou</h1>
-            <div class="candidate-title">Associate Principal Engineer / Senior Lead Engineer / Lead Engineer, Machine Learning</div>
-            <div class="ref-id">Ref. ID: CTO/AITT/MSA/2246 | Technical Portfolio</div>
+            <div class="contact-info">
+                Hong Kong (TTPS Visa) | +86 15611095900 | jz540@seas.upenn.edu | Trilingual: EN / ZH / FR
+            </div>
         </header>
 
-        <!-- ALIGNMENT MATRIX -->
-        <section id="matrix">
-            <h2>Role Alignment Matrix</h2>
-            <table class="matrix-table">
-                <thead>
-                    <tr>
-                        <th>Requirement</th>
-                        <th>Evidence / Project Implementation</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Lead team to design, implement, and deploy</td>
-                        <td><strong>NetEase Engineering Maturity</strong>: Scaled distributed architectures to $6M revenue.</td>
-                    </tr>
-                    <tr>
-                        <td>Develop models for smart city and fintech</td>
-                        <td><strong>AI Stock Analyst</strong>: Semantic Financial Engine implementation (RAG/Gemini).</td>
-                    </tr>
-                    <tr>
-                        <td>Develop data analytics systems</td>
-                        <td><strong>macbase</strong>: Data ingestion pipeline for Stockfish & opening books.</td>
-                    </tr>
-                    <tr>
-                        <td>Front-end and back-end development</td>
-                        <td><strong>macbase</strong>: Full-stack FastAPI + React 19 architecture.</td>
-                    </tr>
-                    <tr>
-                        <td>Develop deep learning / ML training</td>
-                        <td><strong>CIT 5940/5830</strong>: Academic modeling implementations.</td>
-                    </tr>
-                </tbody>
-            </table>
+        <!-- PROFESSIONAL EXPERIENCE -->
+        <section id="experience">
+            <h2>Professional Experience</h2>
+            
+            <article class="resume-entry">
+                <div class="resume-header">
+                    <h3>Technical Lead</h3>
+                    <span class="resume-date">2024 – Present</span>
+                </div>
+                <span class="resume-org">JL Intelligence (In partnership with Toptal) | Hong Kong / Global</span>
+                <ul class="resume-bullets">
+                    <li>Vetted as a Top 3% Global Talent in partnership with Toptal to deliver high-stakes infrastructure and technical solutions.</li>
+                    <li>Architected the "10-K Intelligence Parser": A Gemini-driven system for institutional 10-K parsing, achieving an 80% reduction in document processing lead time.</li>
+                    <li>Proposed and authored detailed PRDs for the "Adaptive Puzzles" system feature (Chess.com), designing personalized learning workflows that increased 30-day retention by 25%.</li>
+                    <li>Developed Macbase: A high-performance native analytical suite for real-time data synthesis across distributed sources.</li>
+                </ul>
+            </article>
+
+            <article class="resume-entry">
+                <div class="resume-header">
+                    <h3>Project Lead</h3>
+                    <span class="resume-date">Jun 2021 – Nov 2023</span>
+                </div>
+                <span class="resume-org">NetEase Youdao (NYSE: DAO) | Beijing / Hong Kong</span>
+                <ul class="resume-bullets">
+                    <li>Spearheaded the technical and product delivery for the "Youdao Chess" curriculum system, driving user growth from zero to 60,000+ active users.</li>
+                    <li>Scaled the revenue vertical from $0 to $8.4M+ (60M RMB) in annual revenue, acquiring 5,000+ paid users with an Average Revenue Per User (ARPU) of $500.</li>
+                    <li>Authored comprehensive PRDs for engineering squads, focusing on the integration of Chess AI, Stockfish engines, and in-classroom pop-up puzzle systems.</li>
+                    <li>Collaborated weekly with the Marketing team on budget allocation and placement channels; synchronized with lead instructors to adjust product delivery based on shifting user acquisition strategies.</li>
+                    <li>Remotely managed Sales and After-sales organizations, holding primary accountability for weekly revenue targets and quarterly user renewal rates.</li>
+                </ul>
+            </article>
+
+            <article class="resume-entry">
+                <div class="resume-header">
+                    <h3>Founder & Technical Lead</h3>
+                    <span class="resume-date">2014 – 2021</span>
+                </div>
+                <span class="resume-org">Ninja Education (Acquired by NetEase Youdao) | Beijing</span>
+                <ul class="resume-bullets">
+                    <li>Founded and scaled a tutoring and education business, overseeing full-stack technical architecture from inception to acquisition by NetEase.</li>
+                    <li>Headed technical due diligence during the M&A process, ensuring successful migration of systems into the NetEase unified infrastructure.</li>
+                </ul>
+            </article>
         </section>
 
-        <!-- ACADEMIC DOSSIER -->
-        <section id="academic">
-            <h2>Technical Implementations (MCIT)</h2>
-
-            <!-- CIT 5910 -->
-            <article class="course-entry">
-                <div class="course-header">
-                    <h3>Battleship Engine & Software Design</h3>
-                    <span class="course-code">CIT 5910 Core</span>
+        <!-- EDUCATION -->
+        <section id="education">
+            <h2>Education</h2>
+            
+            <article class="resume-entry">
+                <div class="resume-header">
+                    <h3>Master of Computer and Information Technology (MCIT)</h3>
+                    <span class="resume-date">Jan 2023 – Dec 2026 (Expected)</span>
                 </div>
-                <div class="course-desc">A rigorous Java implementation of a grid-based naval engine, emphasizing strict Object-Oriented principles and logical robustness.</div>
-                <div class="tech-deep-dive">
-                    <h4>Engineering Highlights:</h4>
-                    <ul>
-                        <li><strong>Ocean.java</strong>: Implementation of 10x10 matrix interaction logic with encapsulated state handlers.</li>
-                        <li><strong>Polymorphism</strong>: Hierarchical implementation of `Ship` subclasses (`Battleship`, `Cruiser`, etc.) with specialized behaviors.</li>
-                        <li><strong>Memory Protection</strong>: Defensive copying and access modifier strictness to preserve engine integrity.</li>
-                    </ul>
-                </div>
-                <a href="https://github.com/joe-ging/battleship" class="repo-link">Inspect Code (Private Repo) ↗</a>
+                <span class="resume-org">University of Pennsylvania (UPenn)</span>
             </article>
 
-            <!-- CIT 5940 -->
-            <article class="course-entry">
-                <div class="course-header">
-                    <h3>Data Structures & Design Patterns</h3>
-                    <span class="course-code">CIT 5940 Core</span>
+            <article class="resume-entry">
+                <div class="resume-header">
+                    <h3>Master of Studies in Entrepreneurship</h3>
+                    <span class="resume-date">Sep 2020 – Nov 2022</span>
                 </div>
-                <div class="course-desc">Advanced software design focusing on data structure optimization and the application of architectural patterns to complex systems.</div>
-                <div class="tech-deep-dive">
-                    <h4>Engineering Highlights:</h4>
-                    <ul>
-                        <li><strong>Group Project</strong>: Collaboration on high-load Java architectures using Factory, Strategy, and Observer patterns.</li>
-                        <li><strong>Algorithm Complexity</strong>: Implementation of optimized search and sorting routines for large-scale data sets.</li>
-                    </ul>
-                </div>
-                <a href="https://github.com/joe-ging/cit594-group-project" class="repo-link">Inspect Code (Private Repo) ↗</a>
+                <span class="resume-org">University of Cambridge</span>
             </article>
 
-            <!-- EAS 5830 -->
-            <article class="course-entry">
-                <div class="course-header">
-                    <h3>Data Science & Statistical Modeling</h3>
-                    <span class="course-code">EAS 5830 / Modules 1-6</span>
+            <article class="resume-entry">
+                <div class="resume-header">
+                    <h3>Bachelor of Arts in Journalism</h3>
+                    <span class="resume-date">Sep 2005 – Jul 2009</span>
                 </div>
-                <div class="course-desc">A series of intensive modules focusing on Python-driven data analysis, statistical inference, and machine learning foundation.</div>
-                <div class="tech-deep-dive">
-                    <h4>Engineering Highlights:</h4>
-                    <ul>
-                        <li><strong>Predictive Analysis</strong>: Implementation of regression and classification models using standardized Python data stacks.</li>
-                        <li><strong>Data Pipelines</strong>: End-to-end collection, cleaning, and sanitization of unstructured data sets.</li>
-                    </ul>
-                </div>
-                <a href="https://github.com/joe-ging/EAS5830M6" class="repo-link">Inspect Code (Private Repo) ↗</a>
+                <span class="resume-org">Peking University (PKU)</span>
             </article>
 
-            <!-- AI Stock Analyst -->
-            <article class="course-entry" style="border: 2px solid var(--astra-gold); border-radius: 10px; padding: 30px;">
-                <div class="course-header">
-                    <h3>AI Stock Analyst: FinTech R&D</h3>
-                    <span class="course-code">Advanced Research</span>
+            <article class="resume-entry" style="border-left: 3px solid var(--astri-blue);">
+                <div class="resume-header">
+                    <h3>Qualified Professional</h3>
+                    <span class="resume-date">PRC Bar Exam</span>
                 </div>
-                <div class="course-desc">A semantic audit engine designed to parse and synthesize SEC 10-K filings using **Gemini 3 Pro**.</div>
-                <div class="tech-deep-dive">
-                    <h4>Engineering Highlights:</h4>
-                    <ul>
-                        <li><strong>Agentic RAG</strong>: High-precision retrieval for corporate semantic extraction (NYSE: DAO filings).</li>
-                        <li><strong>ML Observability</strong>: Pipeline instrumentation to track semantic drift and audit accuracy.</li>
-                    </ul>
-                </div>
-                <a href="https://github.com/joe-ging/AI_Stock_Analyst" class="repo-link">Explore Agent Architecture ↗</a>
+                <div class="resume-org">Bridging legal-technical infrastructure compliance requirements.</div>
             </article>
+        </section>
+
+        <!-- CORE PROJECTS (DEMO READY) -->
+        <section id="projects">
+            <h2>Demonstration Projects</h2>
+            <div class="project-grid">
+                <!-- Hangman -->
+                <div class="p-card nlp">
+                    <span class="p-tag">Algorithm / Hybrid Engine</span>
+                    <h3>Hangman AI Challenge</h3>
+                    <p>High-performance NLP hybrid combining Cascading N-grams (5-gram to 1-gram) with Bi-LSTM reasoning for 250k+ vocabulary stress tests.</p>
+                    <div class="p-links">
+                        <a href="https://github.com/joe-ging/Hangman_API_Challenge" class="btn btn-primary">Source Code</a>
+                    </div>
+                </div>
+
+                <!-- MacBase -->
+                <div class="p-card nlp">
+                    <span class="p-tag">Infrastructure / AI Coach</span>
+                    <h3>MacBase Pro Edition</h3>
+                    <p>Native macOS analytical suite with real-time Stockfish 16.1 integration and specialized Agentic LLM game annotations (490+ clones).</p>
+                    <div class="p-links">
+                        <a href="https://joe-ging.github.io/macbase-app/" class="btn btn-primary">Landing Page</a>
+                        <a href="https://github.com/joe-ging/macbase" class="btn btn-outline">GitHub Repo</a>
+                    </div>
+                </div>
+
+                <!-- RedotPay -->
+                <div class="p-card fintech">
+                    <span class="p-tag">Security / FinTech Architecture</span>
+                    <h3>RedDotPay AI-Audit</h3>
+                    <p>Deterministic-to-Probabilistic hybrid intent routing for global payments, featuring a bank-grade PII masking layer.</p>
+                    <div class="p-links">
+                        <a href="https://joe-ging.github.io/redotpay-ai-audit-demo/" class="btn btn-primary">Live Demo</a>
+                    </div>
+                </div>
+
+                <!-- JL Parser -->
+                <div class="p-card fintech">
+                    <span class="p-tag">LLM / Data Analytics</span>
+                    <h3>JL Intelligence Parser</h3>
+                    <p>Orchestration of Gemini 1.5 Flash for institutional-grade semantic parsing of complex 300+ page financial reports.</p>
+                    <div class="p-links">
+                        <a href="https://jl-intelligence.netlify.app" class="btn btn-primary">Web App</a>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <footer>
-            <p><strong>Margot Jing Zhou</strong> • jz540@seas.upenn.edu</p>
-            <p style="margin-top: 10px; opacity: 0.6;">University of Pennsylvania | MCIT Candidate 2026</p>
+            <p><strong>Margot Jing Zhou</strong> • Associate Principal Technical Portfolio</p>
+            <p style="margin-top: 8px; opacity: 0.5;">Ivy League Research + Revenue-Scale Engineering Leadership</p>
+            <p style="margin-top: 15px; font-family: 'Source Code Pro', monospace; font-size: 0.65rem;">BUILD_STAMP: 2026.04.27_CANONICAL_ALIGNED</p>
         </footer>
     </div>
 </body>
