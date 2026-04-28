@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Margot Jing Zhou | ASTRI Associate Principal Technical Dossier</title>
+    <!-- Elite Academic Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;700&family=Source+Code+Pro:wght@400;600&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --astri-blue: #0A1F44;
+            --astri-red: #D22B2B;
+            --academic-gold: #B5965A;
+            --bg-light: #FAFAFA;
+            --glass-bg: rgba(255, 255, 255, 0.9);
+            --border: #E2E8F0;
+            --text-main: #1E293B;
+            --text-dim: #64748B;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            background-color: var(--bg-light); 
+            color: var(--text-main); 
+            font-family: 'Inter', sans-serif; 
+            line-height: 1.7; 
+            scroll-behavior: smooth;
+        }
+        
+        .container { max-width: 1080px; margin: 0 auto; padding: 0 40px; }
+
+        /* Floating Nav */
+        nav {
+            position: fixed; top: 20px; left: 50%; transform: translateX(-50%);
+            background: var(--glass-bg); backdrop-filter: blur(10px);
+            padding: 12px 30px; border-radius: 40px; border: 1px solid var(--border);
+            z-index: 1000; box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            display: flex; gap: 20px; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;
+        }
+        nav a { text-decoration: none; color: var(--astri-blue); transition: 0.2s; }
+        nav a:hover { color: var(--astri-red); }
+
+        /* Header / Hero */
+        header { 
+            padding: 180px 0 100px 0; 
+            text-align: center;
+            background: radial-gradient(circle at top right, #F1F5F9 0%, transparent 70%);
+        }
+        h1 { 
+            font-family: 'EB Garamond', serif; font-size: 5rem; letter-spacing: -2px; 
+            margin-bottom: 20px; color: var(--astri-blue); line-height: 0.9;
+        }
+        .hero-title { 
+            font-size: 1.1rem; font-weight: 800; color: var(--astri-red); 
+            text-transform: uppercase; letter-spacing: 3px; margin-bottom: 30px; 
+        }
+        .contact-info { font-family: 'Source Code Pro', monospace; font-size: 0.8rem; color: var(--text-dim); margin-top: 20px; }
+
+        /* Section Headings */
+        section { padding: 100px 0; border-top: 1px solid var(--border); }
+        h2 { 
+            font-family: 'EB Garamond', serif; font-size: 2.8rem; margin-bottom: 50px; 
+            color: var(--astri-blue); display: flex; align-items: center; gap: 20px;
+        }
+        h2::after { content: ""; flex: 1; height: 1px; background: var(--border); }
+
+        /* Resume Grid Layout */
+        .resume-entry { margin-bottom: 40px; border-left: 3px solid var(--academic-gold); padding-left: 30px; }
+        .resume-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px; }
+        .resume-header h3 { font-family: 'EB Garamond', serif; font-size: 1.8rem; color: var(--astri-blue); }
+        .resume-date { font-family: 'Source Code Pro', monospace; font-size: 0.75rem; color: var(--academic-gold); font-weight: 700; }
+        .resume-org { font-weight: 700; color: var(--text-main); font-size: 1.05rem; margin-bottom: 10px; display: block; }
+        .resume-bullets { list-style: none; }
+        .resume-bullets li { font-size: 0.95rem; margin-bottom: 12px; position: relative; padding-left: 20px; color: var(--text-dim); }
+        .resume-bullets li::before { content: "•"; position: absolute; left: 0; color: var(--academic-gold); font-weight: bold; }
+
+        /* Project Cards */
+        .project-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+        .p-card {
+            background: #FFF; border-radius: 20px; border: 1px solid var(--border);
+            padding: 40px; transition: 0.3s; position: relative; overflow: hidden;
+            display: flex; flex-direction: column;
+        }
+        .p-card:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.05); }
+        .p-card::before { content: ""; position: absolute; top: 0; left: 0; width: 6px; height: 100%; background: var(--astri-blue); }
+        .p-card.nlp::before { background: var(--astri-red); }
+        .p-card.fintech::before { background: var(--academic-gold); }
+
+        .p-tag { font-family: 'Source Code Pro', monospace; font-size: 0.7rem; font-weight: 800; color: var(--text-dim); margin-bottom: 15px; display: block; border-left: 2px solid var(--astri-red); padding-left: 10px; text-transform: uppercase; }
+        .p-card h3 { font-family: 'EB Garamond', serif; font-size: 2rem; margin-bottom: 15px; color: var(--astri-blue); }
+        .p-card p { color: var(--text-dim); font-size: 0.95rem; margin-bottom: 25px; flex-grow: 1; }
+        
+        .p-links { display: flex; gap: 15px; margin-top: auto; }
+        .btn { text-decoration: none; padding: 10px 18px; border-radius: 6px; font-weight: 700; font-size: 0.8rem; transition: 0.2s; display: inline-flex; align-items: center; gap: 8px; }
+        .btn-primary { background: var(--astri-blue); color: #FFF; }
+        .btn-primary:hover { background: var(--astri-red); }
+        .btn-outline { border: 1px solid var(--astri-blue); color: var(--astri-blue); }
+        .btn-outline:hover { background: var(--astri-blue); color: #FFF; }
+
+        footer { padding: 80px 0; text-align: center; color: var(--text-dim); font-size: 0.85rem; background: #FFF; border-top: 1px solid var(--border); }
+
+        @media (max-width: 900px) {
+            .project-grid { grid-template-columns: 1fr; }
+            h1 { font-size: 3.5rem; }
+            .resume-header { flex-direction: column; gap: 5px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <a href="#projects">Tech Projects</a>
+    </nav>
+
+    <div class="container">
+        <!-- HERO -->
+        <header>
+            <div style="font-family: 'Source Code Pro', monospace; font-size: 0.85rem; color: var(--astri-red); font-weight: 800; margin-bottom: 10px;">
+                APPLYING TO: ASTRI (Ref. ID: CTO/AITT/MSA/2246)
+            </div>
+            <div class="hero-title">Associate Principal Engineer / Senior Lead Engineer / Lead Engineer, Machine Learning</div>
+            <h1>Margot Jing Zhou</h1>
+            <div class="contact-info">
+                Hong Kong (TTPS Visa) | +86 15611095900 | jz540@seas.upenn.edu | Trilingual: EN / ZH / FR
+            </div>
+            <div style="margin-top: 15px; font-size: 0.9rem; font-weight: 600; color: var(--academic-gold); letter-spacing: 0.5px;">
+                Beijing Representative, 2021 National Games (Chess) | FIDE Certified Instructor<br>
+                2021年全運會北京代表（國際象棋） | 國際棋聯（FIDE）認證教練
+            </div>
+        </header>
+
+        <!-- PROFESSIONAL EXPERIENCE -->
+        <section id="experience">
+            <h2>Professional Experience</h2>
+            
+            <article class="resume-entry">
+                <div class="resume-header">
+                    <h3>Technical Lead</h3>
+                    <span class="resume-date">2024 – Present</span>
+                </div>
+                <span class="resume-org">JL Intelligence (In partnership with Toptal) | Hong Kong / Global</span>
+                <ul class="resume-bullets">
+                    <li>Vetted as a Top 3% Global Talent in partnership with Toptal to deliver high-stakes infrastructure and technical solutions.</li>
+                    <li>Architected the "10-K Intelligence Parser": A Gemini-driven system for institutional 10-K parsing, achieving an 80% reduction in document processing lead time.</li>
+                    <li>Proposed and authored detailed PRDs for the "Adaptive Puzzles" system feature (Chess.com), designing personalized learning workflows that increased 30-day retention by 25%.</li>
+                    <li>Developed Macbase: A high-performance native analytical suite for real-time data synthesis across distributed sources.</li>
+                </ul>
+            </article>
+
+            <article class="resume-entry">
+                <div class="resume-header">
+                    <h3>Project Lead</h3>
+                    <span class="resume-date">Jun 2021 – Nov 2023</span>
+                </div>
+                <span class="resume-org">NetEase Youdao (NYSE: DAO) | Beijing / Hong Kong</span>
+                <ul class="resume-bullets">
+                    <li>Spearheaded the technical and product delivery for the "Youdao Chess" curriculum system, driving user growth from zero to 60,000+ active users.</li>
+                    <li>Scaled the revenue vertical from $0 to $8.4M+ (60M RMB) in annual revenue, acquiring 5,000+ paid users with an Average Revenue Per User (ARPU) of $500.</li>
+                    <li>Authored comprehensive PRDs for engineering squads, focusing on the integration of Chess AI, Stockfish engines, and in-classroom pop-up puzzle systems.</li>
+                    <li>Collaborated weekly with the Marketing team on budget allocation and placement channels; synchronized with lead instructors to adjust product delivery based on shifting user acquisition strategies.</li>
+                    <li>Remotely managed Sales and After-sales organizations, holding primary accountability for weekly revenue targets and quarterly user renewal rates.</li>
+                </ul>
+            </article>
+
+            <article class="resume-entry">
+                <div class="resume-header">
+                    <h3>Founder & Technical Lead</h3>
+                    <span class="resume-date">2014 – 2021</span>
+                </div>
+                <span class="resume-org">Ninja Education (Acquired by NetEase Youdao) | Beijing</span>
+                <ul class="resume-bullets">
+                    <li>Founded and scaled a tutoring and education business, overseeing full-stack technical architecture from inception to acquisition by NetEase.</li>
+                    <li>Headed technical due diligence during the M&A process, ensuring successful migration of systems into the NetEase unified infrastructure.</li>
+                </ul>
+            </article>
+        </section>
+
+        <!-- EDUCATION -->
+        <section id="education">
+            <h2>Education</h2>
+            
+            <article class="resume-entry">
+                <div class="resume-header">
+                    <h3>Master of Computer and Information Technology (MCIT)</h3>
+                    <span class="resume-date">Jan 2023 – Dec 2026 (Expected)</span>
+                </div>
+                <span class="resume-org">University of Pennsylvania (UPenn)</span>
+            </article>
+
+            <article class="resume-entry">
+                <div class="resume-header">
+                    <h3>Master of Studies in Entrepreneurship</h3>
+                    <span class="resume-date">Sep 2020 – Nov 2022</span>
+                </div>
+                <span class="resume-org">University of Cambridge</span>
+            </article>
+
+            <article class="resume-entry">
+                <div class="resume-header">
+                    <h3>Bachelor of Arts in Journalism</h3>
+                    <span class="resume-date">Sep 2005 – Jul 2009</span>
+                </div>
+                <span class="resume-org">Peking University (PKU)</span>
+            </article>
+
+            <article class="resume-entry" style="border-left: 3px solid var(--astri-blue);">
+                <div class="resume-header">
+                    <h3>Qualified Professional</h3>
+                    <span class="resume-date">PRC Bar Exam</span>
+                </div>
+                <div class="resume-org">Bridging legal-technical infrastructure compliance requirements.</div>
+            </article>
+        </section>
+
+        <!-- THOUGHT LEADERSHIP & IMPACT -->
+        <section id="impact">
+            <h2>Thought Leadership & Educational Impact</h2>
+            <div class="project-grid">
+                <!-- Newsletter -->
+                <div class="p-card" style="border-left: 6px solid var(--astri-red);">
+                    <span class="p-tag">INDUSTRY INFLUENCE / TECHNICAL WRITING</span>
+                    <h3>The AI Alpha: Newsletter</h3>
+                    <p>Authored regular technical insights on Agentic AI, CI/CD for ML, and the intersection of Law and Code. My recent deep dive on <b>"Automated CI/CD Pipelines for LLM Orchestration"</b> has driven significant engagement.</p>
+                    
+                    <div style="background: rgba(10, 31, 68, 0.03); padding: 20px; border-radius: 12px; margin-bottom: 25px; border: 1px dashed var(--border);">
+                        <p style="font-size: 0.9rem; color: var(--astri-blue); font-weight: 700;">
+                            ✨ Subscribed by ecosystem leaders, including the <b>Head of Startup Ecosystem & Development @ HKSTP</b>.
+                        </p>
+                    </div>
+
+                    <div class="p-links">
+                        <a href="https://www.linkedin.com/newsletters/the-ai-alpha-jl-intelligence-7432435107556163586/" class="btn btn-primary">Subscribe</a>
+                        <a href="https://www.linkedin.com/in/jz540" class="btn btn-outline">LinkedIn</a>
+                    </div>
+                </div>
+
+                <!-- Education / Loom -->
+                <div class="p-card" style="border-left: 6px solid var(--academic-gold);">
+                    <span class="p-tag">TECHNICAL TRAINING / CURRICULUM DESIGN</span>
+                    <h3>Technical Trainer</h3>
+                    <p>Experienced in high-fidelity technical storytelling and curriculum architecture for advanced AI/DevOps workflows.</p>
+                    
+                    <!-- Loom Embed -->
+                    <div style="position: relative; padding-bottom: 56.13305613305614%; height: 0; margin-bottom: 25px; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 20px rgba(0,0,0,0.1);">
+                        <iframe src="https://www.loom.com/embed/559bc02babbc42e89d90655c8d2f5812" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+                    </div>
+
+                    <p style="font-size: 0.85rem; color: var(--text-dim);">
+                        <i>Sample: Technical walkthrough of Agentic AI architectures and deployment strategies.</i>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CORE PROJECTS -->
+        <section id="projects">
+            <h2>Demonstration Projects</h2>
+            <div class="project-grid">
+                <!-- Hangman -->
+                <div class="p-card nlp">
+                    <span class="p-tag">Algorithm / Hybrid Engine</span>
+                    <h3>Hangman AI Challenge</h3>
+                    <p>High-performance NLP hybrid combining Cascading N-grams (5-gram to 1-gram) with Bi-LSTM reasoning for 250k+ vocabulary stress tests.</p>
+                    <div class="p-links">
+                        <a href="https://github.com/joe-ging/Hangman_API_Challenge" class="btn btn-primary">Source Code</a>
+                    </div>
+                </div>
+
+                <!-- MacBase -->
+                <div class="p-card nlp">
+                    <span class="p-tag">Infrastructure / AI Coach</span>
+                    <h3>MacBase Pro Edition</h3>
+                    <p>Native macOS analytical suite with real-time Stockfish 16.1 integration and specialized Agentic LLM game annotations (490+ clones).</p>
+                    <div class="p-links">
+                        <a href="https://joe-ging.github.io/macbase-app/" class="btn btn-primary">Landing Page</a>
+                        <a href="https://github.com/joe-ging/macbase" class="btn btn-outline">GitHub Repo</a>
+                    </div>
+                </div>
+
+                <!-- RedotPay -->
+                <div class="p-card fintech">
+                    <span class="p-tag">Security / FinTech Architecture</span>
+                    <h3>RedDotPay AI-Audit</h3>
+                    <p>Deterministic-to-Probabilistic hybrid intent routing for global payments, featuring a bank-grade PII masking layer.</p>
+                    <div class="p-links">
+                        <a href="https://joe-ging.github.io/redotpay-ai-audit-demo/" class="btn btn-primary">Live Demo</a>
+                    </div>
+                </div>
+
+                <!-- JL Parser -->
+                <div class="p-card fintech">
+                    <span class="p-tag">LLM / Data Analytics</span>
+                    <h3>JL Intelligence Parser</h3>
+                    <p>Orchestration of Gemini 1.5 Flash for institutional-grade semantic parsing of complex 300+ page financial reports.</p>
+                    <div class="p-links">
+                        <a href="https://jl-intelligence.netlify.app" class="btn btn-primary">Web App</a>
+                    </div>
+                </div>
+
+                <!-- Bridge -->
+                <div class="p-card fintech">
+                    <span class="p-tag">Web3 / Cross-chain / Infrastructure</span>
+                    <h3>EAS 5830 Bridge</h3>
+                    <p>A high-performance blockchain relayer facilitating secure asset bridging (Wrapped BTC) between Avalanche and BSC testnets.</p>
+                    <ul class="p-features">
+                        <li><strong>Event Orchestration</strong>: Real-time asynchronous listening for on-chain Deposit/Unwrap events.</li>
+                        <li><strong>Multi-chain Transaction Sync</strong>: Transaction signing and nonce management across disparate EVM networks.</li>
+                    </ul>
+                    <div class="p-links">
+                        <a href="https://github.com/joe-ging/EAS5830_CrossChain_Bridge" class="btn btn-primary">Source Code</a>
+                    </div>
+                </div>
+
+                <!-- Battleship -->
+                <div class="p-card">
+                    <span class="p-tag">JAVA / OOP / STATE MANAGEMENT</span>
+                    <h3>Battleship OOP System</h3>
+                    <p>A rigorous object-oriented console application implementing a 10x10 naval strategy board, emphasizing advanced Java design principles.</p>
+                    <ul class="p-features">
+                        <li><strong>Inheritance</strong>: Hierarchical implementation of an abstract Ship base class.</li>
+                        <li><strong>State Determinism</strong>: Precise tracking of ship integrity via encapsulated boolean arrays.</li>
+                    </ul>
+                    <div class="p-links">
+                        <a href="https://github.com/joe-ging/Battleship_Java_OOP_System" class="btn btn-outline">Source Code</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p><strong>Margot Jing Zhou</strong> • Associate Principal Technical Portfolio</p>
+            <p style="margin-top: 8px; opacity: 0.5;">Ivy League Research + Revenue-Scale Engineering Leadership</p>
+            <p style="margin-top: 15px; font-family: 'Source Code Pro', monospace; font-size: 0.65rem;">BUILD_STAMP: 2026.04.27_FINAL_SYNERGY</p>
+        </footer>
+    </div>
+</body>
+</html>
