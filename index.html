@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Margot Jing Zhou | ASTRI Associate Principal Technical Dossier</title>
+    <title>Margot Jing Zhou | AI Architect & Technical Venture Builder</title>
     <!-- Elite Academic Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;700&family=Source+Code+Pro:wght@400;600&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --astri-blue: #0A1F44;
-            --astri-red: #D22B2B;
+            --primary-blue: #0A1F44;
+            --primary-red: #D22B2B;
             --academic-gold: #B5965A;
             --bg-light: #FAFAFA;
             --glass-bg: rgba(255, 255, 255, 0.9);
@@ -39,8 +39,8 @@
             z-index: 1000; box-shadow: 0 10px 30px rgba(0,0,0,0.05);
             display: flex; gap: 20px; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;
         }
-        nav a { text-decoration: none; color: var(--astri-blue); transition: 0.2s; }
-        nav a:hover { color: var(--astri-red); }
+        nav a { text-decoration: none; color: var(--primary-blue); transition: 0.2s; }
+        nav a:hover { color: var(--primary-red); }
 
         /* Header / Hero */
         header { 
@@ -50,10 +50,10 @@
         }
         h1 { 
             font-family: 'EB Garamond', serif; font-size: 5rem; letter-spacing: -2px; 
-            margin-bottom: 20px; color: var(--astri-blue); line-height: 0.9;
+            margin-bottom: 20px; color: var(--primary-blue); line-height: 0.9;
         }
         .hero-title { 
-            font-size: 1.1rem; font-weight: 800; color: var(--astri-red); 
+            font-size: 1.1rem; font-weight: 800; color: var(--primary-red); 
             text-transform: uppercase; letter-spacing: 3px; margin-bottom: 30px; 
         }
         .contact-info { font-family: 'Source Code Pro', monospace; font-size: 0.8rem; color: var(--text-dim); margin-top: 20px; }
@@ -62,14 +62,14 @@
         section { padding: 100px 0; border-top: 1px solid var(--border); }
         h2 { 
             font-family: 'EB Garamond', serif; font-size: 2.8rem; margin-bottom: 50px; 
-            color: var(--astri-blue); display: flex; align-items: center; gap: 20px;
+            color: var(--primary-blue); display: flex; align-items: center; gap: 20px;
         }
         h2::after { content: ""; flex: 1; height: 1px; background: var(--border); }
 
         /* Resume Grid Layout */
         .resume-entry { margin-bottom: 40px; border-left: 3px solid var(--academic-gold); padding-left: 30px; }
         .resume-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px; }
-        .resume-header h3 { font-family: 'EB Garamond', serif; font-size: 1.8rem; color: var(--astri-blue); }
+        .resume-header h3 { font-family: 'EB Garamond', serif; font-size: 1.8rem; color: var(--primary-blue); }
         .resume-date { font-family: 'Source Code Pro', monospace; font-size: 0.75rem; color: var(--academic-gold); font-weight: 700; }
         .resume-org { font-weight: 700; color: var(--text-main); font-size: 1.05rem; margin-bottom: 10px; display: block; }
         .resume-bullets { list-style: none; }
@@ -84,20 +84,20 @@
             display: flex; flex-direction: column;
         }
         .p-card:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.05); }
-        .p-card::before { content: ""; position: absolute; top: 0; left: 0; width: 6px; height: 100%; background: var(--astri-blue); }
-        .p-card.nlp::before { background: var(--astri-red); }
+        .p-card::before { content: ""; position: absolute; top: 0; left: 0; width: 6px; height: 100%; background: var(--primary-blue); }
+        .p-card.nlp::before { background: var(--primary-red); }
         .p-card.fintech::before { background: var(--academic-gold); }
 
-        .p-tag { font-family: 'Source Code Pro', monospace; font-size: 0.7rem; font-weight: 800; color: var(--text-dim); margin-bottom: 15px; display: block; border-left: 2px solid var(--astri-red); padding-left: 10px; text-transform: uppercase; }
-        .p-card h3 { font-family: 'EB Garamond', serif; font-size: 2rem; margin-bottom: 15px; color: var(--astri-blue); }
+        .p-tag { font-family: 'Source Code Pro', monospace; font-size: 0.7rem; font-weight: 800; color: var(--text-dim); margin-bottom: 15px; display: block; border-left: 2px solid var(--primary-red); padding-left: 10px; text-transform: uppercase; }
+        .p-card h3 { font-family: 'EB Garamond', serif; font-size: 2rem; margin-bottom: 15px; color: var(--primary-blue); }
         .p-card p { color: var(--text-dim); font-size: 0.95rem; margin-bottom: 25px; flex-grow: 1; }
         
         .p-links { display: flex; gap: 15px; margin-top: auto; }
         .btn { text-decoration: none; padding: 10px 18px; border-radius: 6px; font-weight: 700; font-size: 0.8rem; transition: 0.2s; display: inline-flex; align-items: center; gap: 8px; }
-        .btn-primary { background: var(--astri-blue); color: #FFF; }
-        .btn-primary:hover { background: var(--astri-red); }
-        .btn-outline { border: 1px solid var(--astri-blue); color: var(--astri-blue); }
-        .btn-outline:hover { background: var(--astri-blue); color: #FFF; }
+        .btn-primary { background: var(--primary-blue); color: #FFF; }
+        .btn-primary:hover { background: var(--primary-red); }
+        .btn-outline { border: 1px solid var(--primary-blue); color: var(--primary-blue); }
+        .btn-outline:hover { background: var(--primary-blue); color: #FFF; }
 
         footer { padding: 80px 0; text-align: center; color: var(--text-dim); font-size: 0.85rem; background: #FFF; border-top: 1px solid var(--border); }
 
@@ -119,10 +119,10 @@
     <div class="container">
         <!-- HERO -->
         <header>
-            <div style="font-family: 'Source Code Pro', monospace; font-size: 0.85rem; color: var(--astri-red); font-weight: 800; margin-bottom: 10px;">
-                APPLYING TO: ASTRI (Ref. ID: CTO/AITT/MSA/2246)
+            <div style="font-family: 'Source Code Pro', monospace; font-size: 0.85rem; color: var(--primary-red); font-weight: 800; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 2px;">
+                Verified Toptal Top 3% Expert | AI & Web3 Architecture
             </div>
-            <div class="hero-title">Associate Principal Engineer / Senior Lead Engineer / Lead Engineer, Machine Learning</div>
+            <div class="hero-title">AI Architect / Technical Product Leader / Venture Builder</div>
             <h1>Margot Jing Zhou</h1>
             <div class="contact-info">
                 Hong Kong (TTPS Visa) | +86 15611095900 | jz540@seas.upenn.edu | Trilingual: EN / ZH / FR
@@ -133,6 +133,33 @@
             </div>
         </header>
 
+        <!-- STRATEGY MATRIX -->
+        <section id="matrix">
+            <h2>Technical Strategy & Deployment Matrix</h2>
+            <table class="matrix-table">
+                <thead>
+                    <tr>
+                        <th>Technical Domain</th>
+                        <th>Evidence / Technical Deployment</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Agentic AI Orchestration</td>
+                        <td>Gemini-driven 10-K Parsing / LLM-based RAG pipelines</td>
+                    </tr>
+                    <tr>
+                        <td>Financial Engineering</td>
+                        <td>Revenue scaling ($8.4M+ ARR) / FinTech audit architectures</td>
+                    </tr>
+                    <tr>
+                        <td>Full-Stack Infrastructure</td>
+                        <td>macOS native analytical suites / EVM cross-chain bridge logic</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
         <!-- PROFESSIONAL EXPERIENCE -->
         <section id="experience">
             <h2>Professional Experience</h2>
@@ -142,7 +169,7 @@
                     <h3>Technical Lead</h3>
                     <span class="resume-date">2024 – Present</span>
                 </div>
-                <span class="resume-org">JL Intelligence (In partnership with Toptal) | Hong Kong / Global</span>
+                <span class="resume-org">Consultancy (In partnership with Toptal) | Hong Kong / Global</span>
                 <ul class="resume-bullets">
                     <li>Vetted as a Top 3% Global Talent in partnership with Toptal to deliver high-stakes infrastructure and technical solutions.</li>
                     <li>Architected the "10-K Intelligence Parser": A Gemini-driven system for institutional 10-K parsing, achieving an 80% reduction in document processing lead time.</li>
@@ -207,7 +234,7 @@
                 <span class="resume-org">Peking University (PKU)</span>
             </article>
 
-            <article class="resume-entry" style="border-left: 3px solid var(--astri-blue);">
+            <article class="resume-entry" style="border-left: 3px solid var(--primary-blue);">
                 <div class="resume-header">
                     <h3>Qualified Professional</h3>
                     <span class="resume-date">PRC Bar Exam</span>
@@ -221,13 +248,13 @@
             <h2>Thought Leadership & Educational Impact</h2>
             <div class="project-grid">
                 <!-- Newsletter -->
-                <div class="p-card" style="border-left: 6px solid var(--astri-red);">
+                <div class="p-card" style="border-left: 6px solid var(--primary-red);">
                     <span class="p-tag">INDUSTRY INFLUENCE / TECHNICAL WRITING</span>
                     <h3>The AI Alpha: Newsletter</h3>
                     <p>Authored regular technical insights on Agentic AI, CI/CD for ML, and the intersection of Law and Code. My recent deep dive on <b>"Automated CI/CD Pipelines for LLM Orchestration"</b> has driven significant engagement.</p>
                     
                     <div style="background: rgba(10, 31, 68, 0.03); padding: 20px; border-radius: 12px; margin-bottom: 25px; border: 1px dashed var(--border);">
-                        <p style="font-size: 0.9rem; color: var(--astri-blue); font-weight: 700;">
+                        <p style="font-size: 0.9rem; color: var(--primary-blue); font-weight: 700;">
                             ✨ Subscribed by ecosystem leaders, including the <b>Head of Startup Ecosystem & Development @ HKSTP</b>.
                         </p>
                     </div>
@@ -294,7 +321,7 @@
                 <!-- JL Parser -->
                 <div class="p-card fintech">
                     <span class="p-tag">LLM / Data Analytics</span>
-                    <h3>JL Intelligence Parser</h3>
+                    <h3>Intelligence Parser</h3>
                     <p>Orchestration of Gemini 1.5 Flash for institutional-grade semantic parsing of complex 300+ page financial reports.</p>
                     <div class="p-links">
                         <a href="https://jl-intelligence.netlify.app" class="btn btn-primary">Web App</a>
@@ -332,9 +359,9 @@
         </section>
 
         <footer>
-            <p><strong>Margot Jing Zhou</strong> • Associate Principal Technical Portfolio</p>
-            <p style="margin-top: 8px; opacity: 0.5;">Ivy League Research + Revenue-Scale Engineering Leadership</p>
-            <p style="margin-top: 15px; font-family: 'Source Code Pro', monospace; font-size: 0.65rem;">BUILD_STAMP: 2026.04.27_FINAL_SYNERGY</p>
+            <p><strong>Margot Jing Zhou</strong> • AI & Web3 Technical Portfolio</p>
+            <p style="margin-top: 8px; opacity: 0.5;">UPenn MCIT + Revenue-Scale Engineering Leadership</p>
+            <p style="margin-top: 15px; font-family: 'Source Code Pro', monospace; font-size: 0.65rem;">PORTFOLIO_REF: 2026.Q2_EXECUTIVE_EDITION</p>
         </footer>
     </div>
 </body>
