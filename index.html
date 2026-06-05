@@ -298,19 +298,28 @@
                     </div>
                 </div>
 
-                <div class="p-card">
-                    <span class="p-tag">Cloud Sales Strategy / TCO / Hybrid Infrastructure</span>
+                <!-- Interactive Presales Showcase (Full Width) -->
+                <div class="p-card" style="grid-column: 1 / -1; border-left: 6px solid var(--primary-blue);">
+                    <span class="p-tag" style="border-left-color: var(--primary-blue);">Cloud Sales Strategy / TCO / Hybrid Infrastructure</span>
                     <h3>Canonical Presales: Hybrid Cloud Strategic Proposal</h3>
                     <p>Designed a C-level strategic proposal and interactive presentation for NetEase Youdao's K-12 education cloud infrastructure (54,640 vCPUs). Evaluated and modeled a migration from AWS to a Canonical-managed Charmed OpenStack private cloud, achieving 52% ($21.4M) 3-year TCO savings.</p>
-                    <ul class="p-features" style="font-size: 0.85rem; color: var(--text-dim); margin-bottom: 20px; list-style: disc; padding-left: 20px;">
-                        <li><strong>Interactive TCO Engine</strong>: Modeled multi-cloud pricing scenarios comparing AWS Reserved, AWS + K8s Elastic, and Charmed OpenStack.</li>
-                        <li><strong>Data Sovereignty & Compliance</strong>: Mapped regional data compliance boundaries for PIPL, PDPA, and PDPO jurisdictions across APAC.</li>
-                        <li><strong>Zero-Downtime Migration Playbook</strong>: Structured a 4-phase "shadow-run" transition architecture with DNS failover guarantees.</li>
-                    </ul>
-                    <p style="font-size: 0.75rem; font-weight: 700; color: var(--academic-gold); margin-bottom: 10px;">EXPLORE LIVE STRATEGY DECK:</p>
-                    <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-                        <a href="https://joe-ging.github.io/canonical-pitch-deck/index.html" class="btn btn-primary" style="padding: 6px 14px; font-size: 0.75rem;">View Live Pitch Demo</a>
-                        <a href="https://github.com/joe-ging/canonical-pitch-deck" class="btn btn-outline" style="padding: 6px 14px; font-size: 0.75rem;">GitHub Repo</a>
+                    
+                    <!-- Embedded Interactive Presentation Box -->
+                    <div style="margin: 20px 0; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; background: #000; box-shadow: 0 10px 30px rgba(0,0,0,0.1); position: relative;">
+                        <iframe src="https://joe-ging.github.io/canonical-pitch-deck/index.html" 
+                                style="width: 100%; height: 500px; border: none; display: block;" 
+                                allowfullscreen>
+                        </iframe>
+                    </div>
+                    <p style="font-size: 0.85rem; color: var(--text-dim); margin-bottom: 25px; font-style: italic;">
+                        💡 <b>Interactive Demo:</b> You can click directly on the slides above or use your keyboard's left/right arrow keys to navigate the presentation inside this window.
+                    </p>
+
+                    <p style="font-size: 0.75rem; font-weight: 700; color: var(--academic-gold); margin-bottom: 10px;">EXPLORE PROPOSAL ASSETS:</p>
+                    <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                        <a href="https://joe-ging.github.io/canonical-pitch-deck/index.html" target="_blank" class="btn btn-primary" style="padding: 8px 16px; font-size: 0.75rem;">🖥️ View in Fullscreen</a>
+                        <a href="https://github.com/joe-ging/canonical-pitch-deck" target="_blank" class="btn btn-outline" style="padding: 8px 16px; font-size: 0.75rem;">📁 GitHub Repository</a>
+                        <a href="https://github.com/joe-ging/canonical-pitch-deck#readme" target="_blank" class="btn btn-outline" style="padding: 8px 16px; font-size: 0.75rem;">📄 Read Case Study (README)</a>
                     </div>
                 </div>
             </div>
